@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finkison — Getting Started</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.plan-tile{background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-lg);padding:22px;cursor:pointer;transition:all var(--t-base)}
+.plan-tile:hover,.plan-tile.selected{border-color:var(--gold-vivid);background:var(--gold-pale);transform:translateY(-3px)}
+.grade-tile{cursor:pointer;padding:20px;border:2px solid var(--border);border-radius:var(--radius-lg);text-align:center;transition:all var(--t-base);background:var(--surface)}
+.grade-tile:hover,.grade-tile.selected{border-color:var(--gold-vivid);background:var(--gold-pale)}
+.step-bar{height:5px;border-radius:99px;transition:background .4s}
+.step-bar.done{background:var(--gold-vivid)}
+.step-bar.pending{background:var(--border)}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
+  <div class="nav-spacer"></div>
+  <a href="signin.html" class="btn btn-ghost-white btn-sm">← Sign In</a>
+</nav>
+
+<div style="max-width:700px;margin:36px auto;padding:0 24px 60px;">
+  <!-- STEP 1 -->
+  <div id="step1">
+    <div class="pg-eyebrow">Quick Setup · Step 1 of 3</div>
+    <h2 class="pg-title">Choose Your Plan</h2>
+    <p class="pg-sub">Start free, upgrade anytime.</p>
+    <div style="display:flex;gap:6px;margin-bottom:28px;">
+      <div class="step-bar done" style="flex:1;"></div>
+      <div class="step-bar pending" style="flex:1;"></div>
+      <div class="step-bar pending" style="flex:1;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div class="plan-tile" onclick="pickPlan(this)">
+        <div style="font-size:18px;font-weight:800;color:var(--free-color);">Starter</div>
+        <div style="font-size:28px;font-weight:800;color:var(--free-color);margin:8px 0;">ETB 0</div>
+        <div style="font-size:12px;color:var(--ink-30);margin-bottom:10px;">Forever free</div>
+        <div style="font-size:12px;color:var(--ink-60);display:flex;flex-direction:column;gap:5px;"><div>✓ 15 questions/day</div><div>✓ Basic analytics</div><div style="color:var(--border-dark);">✗ AI features</div></div>
+      </div>
+      <div class="plan-tile" onclick="pickPlan(this)" style="border-color:var(--standard-color);">
+        <div style="font-size:18px;font-weight:800;color:var(--standard-color);">Standard</div>
+        <div style="font-size:28px;font-weight:800;color:var(--standard-color);margin:8px 0;">ETB 200<span style="font-size:12px;color:var(--ink-30);">/mo</span></div>
+        <div style="font-size:12px;color:var(--ink-30);margin-bottom:10px;">7-day free trial</div>
+        <div style="font-size:12px;color:var(--ink-60);display:flex;flex-direction:column;gap:5px;"><div>✓ Unlimited questions</div><div>✓ AI Adaptive Paths</div><div>✓ Video Library</div></div>
+      </div>
+      <div class="plan-tile" onclick="pickPlan(this)" style="border-color:var(--premium-color);grid-column:1/-1;">
+        <div style="font-size:18px;font-weight:800;color:var(--premium-color);">Premium</div>
+        <div style="font-size:28px;font-weight:800;color:var(--premium-color);margin:8px 0;">ETB 500<span style="font-size:12px;color:var(--ink-30);">/mo</span></div>
+        <div style="font-size:12px;color:var(--ink-30);margin-bottom:10px;">7-day free trial · Best results</div>
+        <div style="font-size:12px;color:var(--ink-60);display:grid;grid-template-columns:1fr 1fr;gap:5px;"><div>✓ Everything in Standard</div><div>✓ AI Tutor</div><div>✓ Parent Portal</div><div>✓ Live Tutor Sessions</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div id="step2" class="hidden">
+    <div class="pg-eyebrow">Quick Setup · Step 2 of 3</div>
+    <h2 class="pg-title">Your Academic Profile</h2>
+    <p class="pg-sub">Help us personalize your learning path.</p>
+    <div style="display:flex;gap:6px;margin-bottom:28px;">
+      <div class="step-bar done" style="flex:1;"></div>
+      <div class="step-bar done" style="flex:1;"></div>
+      <div class="step-bar pending" style="flex:1;"></div>
+    </div>
+    <div class="g2">
+      <div class="grade-tile" onclick="pickGrade(this)"><div style="font-size:28px;margin-bottom:8px;">9️⃣</div><div style="font-weight:700;">Grade 9</div><div style="font-size:11px;color:var(--ink-30);">Foundation prep</div></div>
+      <div class="grade-tile" onclick="pickGrade(this)"><div style="font-size:28px;margin-bottom:8px;">🔟</div><div style="font-weight:700;">Grade 10</div><div style="font-size:11px;color:var(--ink-30);">Mid-year exams</div></div>
+      <div class="grade-tile" onclick="pickGrade(this)"><div style="font-size:28px;margin-bottom:8px;">1️⃣1️⃣</div><div style="font-weight:700;">Grade 11</div><div style="font-size:11px;color:var(--ink-30);">Stream selection</div></div>
+      <div class="grade-tile" onclick="pickGrade(this)"><div style="font-size:28px;margin-bottom:8px;">1️⃣2️⃣</div><div style="font-weight:700;">Grade 12</div><div style="font-size:11px;color:var(--ink-30);">University entry</div></div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div id="step3" class="hidden">
+    <div class="pg-eyebrow">Quick Setup · Step 3 of 3</div>
+    <h2 class="pg-title">Set Your Goal</h2>
+    <p class="pg-sub">Target score out of 600 and exam date.</p>
+    <div style="display:flex;gap:6px;margin-bottom:28px;">
+      <div class="step-bar done" style="flex:1;"></div>
+      <div class="step-bar done" style="flex:1;"></div>
+      <div class="step-bar done" style="flex:1;"></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <div><div style="font-weight:700;">Target Score (out of 600)</div><div style="font-size:12px;color:var(--ink-30);margin-top:4px;">Realistic benchmark for university entry</div></div>
+        <span id="goal-val" style="font-size:28px;font-weight:800;color:var(--gold);font-family:var(--font-mono);">480</span>
+      </div>
+      <input type="range" min="240" max="600" value="480" oninput="document.getElementById('goal-val').textContent=this.value" style="width:100%;accent-color:var(--gold-vivid);">
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-30);margin-top:8px;"><span>240</span><span>420</span><span>600</span></div>
+      <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;">
+      <div class="form-group"><label class="form-label">Exam Date</label><input type="month" class="form-input"></div>
+      <div style="background:var(--azure-pale);border-left:4px solid var(--azure-vivid);color:var(--azure);padding:13px 16px;border-radius:var(--radius-md);font-size:13px;display:flex;gap:10px;">
+        💡 <span>To reach 480 with AI-optimized practice, plan <strong>45 min/day</strong> over 80 days.</span>
+      </div>
+      <a href="learning-hub.html" class="btn btn-primary btn-lg btn-block" style="margin-top:20px;">Launch My Learning Path 🚀</a>
+    </div>
+  </div>
+</div>
+<script src="nav.js"></script>
+<script>
+function pickPlan(el){
+  document.querySelectorAll('.plan-tile').forEach(t=>{t.classList.remove('selected');t.style.borderColor='';t.style.background=''});
+  el.classList.add('selected');
+  setTimeout(()=>{document.getElementById('step1').classList.add('hidden');document.getElementById('step2').classList.remove('hidden');},320);
+}
+function pickGrade(el){
+  document.querySelectorAll('.grade-tile').forEach(t=>t.classList.remove('selected'));
+  el.classList.add('selected');
+  setTimeout(()=>{document.getElementById('step2').classList.add('hidden');document.getElementById('step3').classList.remove('hidden');},320);
+}
+</script>
+</body>
+</html>
