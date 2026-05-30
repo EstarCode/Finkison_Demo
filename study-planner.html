@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Finkison — Study Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="shared.css"><style>
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:12px}
+.cal-hdr{text-align:center;font-size:10px;font-weight:700;color:var(--ink-30);padding:6px 0}
+.cal-day{text-align:center;padding:8px 4px;border-radius:var(--radius-sm);font-size:12px;cursor:pointer;border:1px solid transparent;transition:all var(--t-fast)}
+.cal-day:hover{background:var(--gold-pale);border-color:var(--gold)}
+.cal-day.today{background:var(--gold-vivid);color:var(--ink);font-weight:700}
+.cal-day.has-s{position:relative}
+.cal-day.has-s::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:5px;height:5px;border-radius:50%;background:var(--azure-vivid)}
+.cal-day.done::after{background:var(--teal-vivid)}
+.sb{padding:12px 14px;border-radius:var(--radius-md);border-left:4px solid;margin-bottom:10px;transition:all var(--t-fast)}
+.sb:hover{transform:translateX(3px)}
+</style>
+</head>
+<body>
+<div class="app">
+<nav class="top-nav">
+  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
+  <div class="nav-spacer"></div>
+  <div class="plan-badge plan-premium">👑 Premium Active</div>
+  <a href="notifications.html" class="nav-icon-btn"><div class="notif-dot"></div>🔔</a>
+  <a href="account-settings.html" class="btn btn-ghost-white btn-sm">⚙️</a>
+</nav>
+<div class="app-body">
+<nav class="side-nav" id="sidebar"></nav>
+<main class="main">
+
+<div class="pg-eyebrow">📅 AI-Optimized</div>
+<h2 class="pg-title">Study Planner</h2>
+<p class="pg-sub">Your AI-generated schedule auto-adjusts based on performance, exam date, and daily availability.</p>
+<div class="g2">
+  <div class="card">
+    <div class="card-label">📆 <span class="ai-chip">AI</span> June 2026 Schedule</div>
+    <div class="cal-grid">
+      <div class="cal-hdr">Sun</div><div class="cal-hdr">Mon</div><div class="cal-hdr">Tue</div><div class="cal-hdr">Wed</div><div class="cal-hdr">Thu</div><div class="cal-hdr">Fri</div><div class="cal-hdr">Sat</div>
+      <div class="cal-day" style="color:var(--ink-30);">1</div><div class="cal-day has-s done">2</div><div class="cal-day has-s done">3</div><div class="cal-day has-s done">4</div><div class="cal-day has-s done">5</div><div class="cal-day has-s done">6</div><div class="cal-day">7</div>
+      <div class="cal-day has-s done">8</div><div class="cal-day has-s done">9</div><div class="cal-day has-s done">10</div><div class="cal-day">11</div><div class="cal-day has-s done">12</div><div class="cal-day has-s done">13</div><div class="cal-day">14</div>
+      <div class="cal-day has-s done">15</div><div class="cal-day has-s done">16</div><div class="cal-day has-s done">17</div><div class="cal-day has-s done">18</div><div class="cal-day has-s done">19</div><div class="cal-day has-s done">20</div><div class="cal-day">21</div>
+      <div class="cal-day has-s done">22</div><div class="cal-day has-s done">23</div><div class="cal-day has-s done">24</div><div class="cal-day has-s done">25</div><div class="cal-day has-s done">26</div><div class="cal-day has-s done">27</div><div class="cal-day">28</div>
+      <div class="cal-day today has-s">29</div><div class="cal-day has-s">30</div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:12px;font-size:11px;color:var(--ink-30);">
+      <span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;background:var(--teal-vivid);border-radius:50%;display:inline-block;"></span>Completed</span>
+      <span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;background:var(--azure-vivid);border-radius:50%;display:inline-block;"></span>Planned</span>
+      <span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;background:var(--gold-vivid);border-radius:50%;display:inline-block;"></span>Today</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-label">⚡ Today's Plan — May 29</div>
+    <div style="margin-top:10px;">
+      <div class="sb" style="border-color:var(--azure);background:var(--azure-pale);"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;"><div style="font-weight:700;font-size:13px;">Mathematics · Quadratic Equations</div><span style="font-size:10px;background:var(--azure);color:#fff;padding:2px 8px;border-radius:999px;font-weight:700;">6:00 AM</span></div><div style="font-size:12px;color:var(--ink-60);">20 adaptive questions · 25 min · HIGH PRIORITY</div></div>
+      <div class="sb" style="border-color:#F59E0B;background:#FFFBEB;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;"><div style="font-weight:700;font-size:13px;">Physics · Force &amp; Motion</div><span style="font-size:10px;background:#F59E0B;color:#fff;padding:2px 8px;border-radius:999px;font-weight:700;">4:00 PM</span></div><div style="font-size:12px;color:var(--ink-60);">15 questions + video review · 20 min</div></div>
+      <div class="sb" style="border-color:var(--teal);background:var(--teal-pale);"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;"><div style="font-weight:700;font-size:13px;">English · Reading Comprehension</div><span style="font-size:10px;background:var(--teal);color:#fff;padding:2px 8px;border-radius:999px;font-weight:700;">7:00 PM</span></div><div style="font-size:12px;color:var(--ink-60);">2 passages · 15 min</div></div>
+      <a href="practice-center.html" class="btn btn-primary" style="width:100%;display:flex;margin-top:8px;">▶ Start Today's Session</a>
+    </div>
+  </div>
+</div>
+<div class="card mt-lg">
+  <div class="card-label">🤖 <span class="ai-chip">AI</span> Schedule Insights</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;">
+    <div style="padding:14px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><div style="font-size:22px;margin-bottom:6px;">⏰</div><div style="font-weight:600;font-size:13px;margin-bottom:4px;">Optimal Study Time</div><div style="font-size:12px;color:var(--ink-30);">You're 23% more accurate at 6–9 AM based on 74 sessions.</div></div>
+    <div style="padding:14px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><div style="font-size:22px;margin-bottom:6px;">📊</div><div style="font-weight:600;font-size:13px;margin-bottom:4px;">Exam Countdown</div><div style="font-size:12px;color:var(--ink-30);">74 days to exam. Need 45 min/day to reach 480.</div></div>
+    <div style="padding:14px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><div style="font-size:22px;margin-bottom:6px;">🔁</div><div style="font-weight:600;font-size:13px;margin-bottom:4px;">Reviews Due Today</div><div style="font-size:12px;color:var(--ink-30);">12 topics due for spaced repetition review.</div></div>
+  </div>
+</div>
+</main></div></div>
+<script src="nav.js"></script>
+</body></html>
