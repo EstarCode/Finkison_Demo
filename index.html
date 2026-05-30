@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finkison — AI-Powered Exam Preparation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── MEGA NAV ── */
+.mega-nav{
+  position:sticky;top:0;z-index:300;
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink-90) 100%);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  box-shadow:0 2px 24px rgba(11,22,40,.35);
+}
+.mega-nav-top{
+  display:flex;align-items:center;padding:0 24px;
+  height:60px;gap:12px;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-mark{width:38px;height:38px;background:linear-gradient(135deg,var(--gold-vivid),var(--gold));
+  border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;
+  box-shadow:0 2px 12px rgba(212,160,23,.35)}
+.logo-text{display:flex;flex-direction:column;line-height:1.15}
+.logo-eth{font-family:var(--font-ethiopic);font-size:11px;color:var(--gold-vivid);font-weight:600}
+.logo-eng{font-size:15px;font-weight:700;color:#fff}
+.nav-spacer{flex:1}
+
+/* nav link row */
+.nav-links{
+  display:flex;align-items:stretch;padding:0 24px;gap:2px;
+  overflow-x:auto;scrollbar-width:none;
+}
+.nav-links::-webkit-scrollbar{display:none}
+
+.nav-group{display:flex;align-items:stretch;gap:1px;position:relative}
+.nav-group-label{
+  font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.25);padding:0 10px;display:flex;align-items:center;
+  flex-shrink:0;border-right:1px solid rgba(255,255,255,.07);margin-right:4px;
+}
+.nav-page-link{
+  display:flex;align-items:center;gap:6px;padding:0 13px;height:42px;
+  color:rgba(255,255,255,.55);font-size:12px;font-weight:500;
+  text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;
+  transition:all 140ms ease;flex-shrink:0;
+}
+.nav-page-link:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.06);border-bottom-color:rgba(255,255,255,.2)}
+.nav-page-link.active{color:var(--gold-vivid);border-bottom-color:var(--gold-vivid);font-weight:600}
+.nav-page-link .ni{font-size:14px;opacity:.7}
+.nav-page-link:hover .ni,.nav-page-link.active .ni{opacity:1}
+.nav-page-link .lock{font-size:9px;opacity:.5;margin-left:2px}
+
+/* divider */
+.nav-div{width:1px;background:rgba(255,255,255,.08);margin:8px 4px;flex-shrink:0}
+
+/* hero */
+.hero{padding:72px 48px;background:linear-gradient(135deg,var(--ink) 0%,var(--ink-90) 60%,#0D2440 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(212,160,23,.12),transparent 60%),radial-gradient(ellipse at 10% 80%,rgba(13,140,107,.08),transparent 50%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:48px;align-items:center;max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.hero h1{font-size:52px;font-weight:800;color:#fff;line-height:1.08;letter-spacing:-.03em;margin-bottom:18px}
+.hero h1 span{background:linear-gradient(135deg,var(--gold-vivid),var(--teal-vivid));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.68);line-height:1.65;margin-bottom:32px;max-width:520px}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(212,160,23,.15);border:1px solid rgba(212,160,23,.25);border-radius:var(--radius-pill);padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-vivid);margin-bottom:22px}
+.demo-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:28px;backdrop-filter:blur(20px)}
+.section-pad{padding:56px 48px;background:var(--bg)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+@media(max-width:1100px){.hero-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.hero{padding:40px 20px}.hero h1{font-size:34px}.section-pad{padding:36px 20px}.mega-nav-top{padding:0 14px}.nav-links{padding:0 8px}}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     MEGA NAVIGATION — all pages listed
+═══════════════════════════════════════ -->
+<nav class="mega-nav">
+
+  <!-- Row 1: Logo + Auth buttons -->
+  <div class="mega-nav-top">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">🦅</div>
+      <div class="logo-text">
+        <span class="logo-eth">ፈንክሶን</span>
+        <span class="logo-eng">Finkison</span>
+      </div>
+    </a>
+    <div class="nav-spacer"></div>
+    <a href="pricing.html"       class="btn btn-ghost-white btn-sm">Plans &amp; Pricing</a>
+    <a href="signin.html"        class="btn btn-ghost-white btn-sm">Sign In</a>
+    <a href="getting-started.html" class="btn btn-primary btn-sm">Get Started Free</a>
+  </div>
+
+  <!-- Row 2: All page links grouped by section -->
+  <div class="nav-links">
+
+    <!-- Public -->
+    <div class="nav-group">
+      <span class="nav-group-label">Public</span>
+      <a href="index.html"          class="nav-page-link active"><span class="ni">🏠</span> Overview</a>
+      <a href="pricing.html"        class="nav-page-link"><span class="ni">💰</span> Plans &amp; Pricing</a>
+      <a href="signin.html"         class="nav-page-link"><span class="ni">🔐</span> Sign In</a>
+      <a href="getting-started.html" class="nav-page-link"><span class="ni">✨</span> Getting Started</a>
+    </div>
+
+    <div class="nav-div"></div>
+
+    <!-- Learning -->
+    <div class="nav-group">
+      <span class="nav-group-label">Learning</span>
+      <a href="learning-hub.html"         class="nav-page-link"><span class="ni">📊</span> Learning Hub</a>
+      <a href="adaptive-learning.html"    class="nav-page-link"><span class="ni">🧠</span> Adaptive Learning</a>
+      <a href="practice-center.html"      class="nav-page-link"><span class="ni">✏️</span> Practice Center</a>
+      <a href="performance-insights.html" class="nav-page-link"><span class="ni">📈</span> Performance Insights</a>
+      <a href="study-planner.html"        class="nav-page-link"><span class="ni">📅</span> Study Planner</a>
+      <a href="video-library.html"        class="nav-page-link"><span class="ni">🎬</span> Video Library<span class="lock">👑</span></a>
+    </div>
+
+    <div class="nav-div"></div>
+
+    <!-- Community -->
+    <div class="nav-group">
+      <span class="nav-group-label">Community</span>
+      <a href="learning-community.html" class="nav-page-link"><span class="ni">👥</span> Learning Community<span class="lock">👑</span></a>
+      <a href="leaderboard.html"        class="nav-page-link"><span class="ni">🏆</span> Leaderboard<span class="lock">👑</span></a>
+    </div>
+
+    <div class="nav-div"></div>
+
+    <!-- Account -->
+    <div class="nav-group">
+      <span class="nav-group-label">Account</span>
+      <a href="notifications.html"   class="nav-page-link"><span class="ni">🔔</span> Notifications</a>
+      <a href="parent-portal.html"   class="nav-page-link"><span class="ni">👨‍👩‍👧</span> Parent Portal<span class="lock">👑</span></a>
+      <a href="account-settings.html" class="nav-page-link"><span class="ni">⚙️</span> Account &amp; Settings</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-label">🎓 AI Exam Preparation · Ethiopia</div>
+      <h1>AI-Powered Exam<br><span>Mastery Engine</span></h1>
+      <p class="hero-sub">Finkison adapts in real-time to 800K+ students' learning patterns. Proven 18–24pt score improvement. Offline-ready. Bilingual.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="getting-started.html" class="btn btn-primary btn-xl">Start Free — No Card Needed</a>
+        <a href="pricing.html"         class="btn btn-ghost-white btn-lg">Compare Plans →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px;max-width:440px;">
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px;">
+          <div style="font-size:24px;font-weight:800;color:var(--gold-vivid);font-family:var(--font-mono);">300+</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.5);">Schools · Beta Phase</div>
+        </div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px;">
+          <div style="font-size:24px;font-weight:800;color:var(--teal-vivid);font-family:var(--font-mono);">+18pt</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.5);">Avg Score Gain</div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-card">
+      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(18,181,135,.15);border:1px solid rgba(18,181,135,.3);border-radius:var(--radius-pill);padding:5px 12px;font-size:10px;font-weight:700;color:var(--teal-vivid);margin-bottom:16px;letter-spacing:.06em;text-transform:uppercase;">
+        <div style="width:7px;height:7px;background:var(--teal-vivid);border-radius:50%;animation:blink 1.5s infinite"></div>Live Platform
+      </div>
+      <div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:18px;">All Features at a Glance</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="learning-hub.html"         style="display:flex;gap:10px;background:rgba(255,255,255,.05);padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.05)'"><span>📊</span><div><div style="font-weight:700;color:#fff;font-size:13px;">Learning Hub</div><div style="font-size:11px;color:rgba(255,255,255,.45);">Your personalized dashboard</div></div><span style="margin-left:auto;color:rgba(255,255,255,.3);font-size:12px;">→</span></a>
+        <a href="adaptive-learning.html"    style="display:flex;gap:10px;background:rgba(255,255,255,.05);padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.05)'"><span>🧠</span><div><div style="font-weight:700;color:#fff;font-size:13px;">Adaptive Learning</div><div style="font-size:11px;color:rgba(255,255,255,.45);">ML-powered study paths</div></div><span style="margin-left:auto;color:rgba(255,255,255,.3);font-size:12px;">→</span></a>
+        <a href="practice-center.html"      style="display:flex;gap:10px;background:rgba(255,255,255,.05);padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.05)'"><span>✏️</span><div><div style="font-weight:700;color:#fff;font-size:13px;">Practice Center</div><div style="font-size:11px;color:rgba(255,255,255,.45);">Live timed practice + AI Tutor</div></div><span style="margin-left:auto;color:rgba(255,255,255,.3);font-size:12px;">→</span></a>
+        <a href="performance-insights.html" style="display:flex;gap:10px;background:rgba(255,255,255,.05);padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.05)'"><span>📈</span><div><div style="font-weight:700;color:#fff;font-size:13px;">Performance Insights</div><div style="font-size:11px;color:rgba(255,255,255,.45);">Score prediction &amp; heatmaps</div></div><span style="margin-left:auto;color:rgba(255,255,255,.3);font-size:12px;">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ALL PAGES QUICK ACCESS
+═══════════════════════════════════════ -->
+<div class="section-pad">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="pg-eyebrow" style="display:inline-flex;">Platform Overview</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;">Every Page, One Click Away</h2>
+      <p style="color:var(--ink-30);font-size:14px;">Navigate to any section of Finkison directly from here.</p>
+    </div>
+
+    <!-- PUBLIC PAGES -->
+    <div style="margin-bottom:36px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-30);margin-bottom:14px;padding-left:4px;">🌐 Public</div>
+      <div class="g4">
+        <a href="index.html" class="card" style="text-decoration:none;color:inherit;border-color:var(--gold);background:var(--gold-pale);">
+          <div style="font-size:28px;margin-bottom:10px;">🏠</div>
+          <div style="font-weight:700;margin-bottom:4px;">Overview</div>
+          <div style="font-size:12px;color:var(--ink-30);">Platform home &amp; hero</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--gold);font-weight:700;">You are here ↗</div>
+        </a>
+        <a href="pricing.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">💰</div>
+          <div style="font-weight:700;margin-bottom:4px;">Plans &amp; Pricing</div>
+          <div style="font-size:12px;color:var(--ink-30);">Free · ETB 200 · ETB 500</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">View Plans →</div>
+        </a>
+        <a href="signin.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">🔐</div>
+          <div style="font-weight:700;margin-bottom:4px;">Sign In</div>
+          <div style="font-size:12px;color:var(--ink-30);">Phone + OTP authentication</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Sign In →</div>
+        </a>
+        <a href="getting-started.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">✨</div>
+          <div style="font-weight:700;margin-bottom:4px;">Getting Started</div>
+          <div style="font-size:12px;color:var(--ink-30);">3-step onboarding wizard</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Onboard →</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- LEARNING PAGES -->
+    <div style="margin-bottom:36px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-30);margin-bottom:14px;padding-left:4px;">📚 Learning</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <a href="learning-hub.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">📊</div>
+          <div style="font-weight:700;margin-bottom:4px;">Learning Hub</div>
+          <div style="font-size:12px;color:var(--ink-30);">Dashboard with AI recommendations, streaks &amp; score prediction</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+        <a href="adaptive-learning.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">🧠</div>
+          <div style="font-weight:700;margin-bottom:4px;">Adaptive Learning</div>
+          <div style="font-size:12px;color:var(--ink-30);">ML-powered subject paths that update daily based on your weak areas</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+        <a href="practice-center.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">✏️</div>
+          <div style="font-weight:700;margin-bottom:4px;">Practice Center</div>
+          <div style="font-size:12px;color:var(--ink-30);">Timed adaptive questions with live AI Tutor explanations</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+        <a href="performance-insights.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">📈</div>
+          <div style="font-weight:700;margin-bottom:4px;">Performance Insights</div>
+          <div style="font-size:12px;color:var(--ink-30);">Score prediction, accuracy heatmaps, weak area spotlight</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+        <a href="study-planner.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">📅</div>
+          <div style="font-weight:700;margin-bottom:4px;">Study Planner</div>
+          <div style="font-size:12px;color:var(--ink-30);">AI-generated daily schedule with calendar view &amp; session blocks</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+        <a href="video-library.html" class="card" style="text-decoration:none;color:inherit;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:12px;right:12px;background:var(--premium-color);color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:999px;letter-spacing:.05em;">👑 PREMIUM</div>
+          <div style="font-size:28px;margin-bottom:10px;">🎬</div>
+          <div style="font-weight:700;margin-bottom:4px;">Video Library</div>
+          <div style="font-size:12px;color:var(--ink-30);">500+ curated exam-prep videos by subject and topic</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- COMMUNITY PAGES -->
+    <div style="margin-bottom:36px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-30);margin-bottom:14px;padding-left:4px;">👥 Community</div>
+      <div class="g2" style="max-width:800px;">
+        <a href="learning-community.html" class="card" style="text-decoration:none;color:inherit;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:12px;right:12px;background:var(--premium-color);color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:999px;letter-spacing:.05em;">👑 PREMIUM</div>
+          <div style="font-size:28px;margin-bottom:10px;">👥</div>
+          <div style="font-weight:700;margin-bottom:4px;">Learning Community</div>
+          <div style="font-size:12px;color:var(--ink-30);">Study groups, live tutor sessions, national rankings</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+        <a href="leaderboard.html" class="card" style="text-decoration:none;color:inherit;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:12px;right:12px;background:var(--premium-color);color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:999px;letter-spacing:.05em;">👑 PREMIUM</div>
+          <div style="font-size:28px;margin-bottom:10px;">🏆</div>
+          <div style="font-weight:700;margin-bottom:4px;">Leaderboard</div>
+          <div style="font-size:12px;color:var(--ink-30);">National rankings with your position, school rank &amp; climb tracker</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ACCOUNT PAGES -->
+    <div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-30);margin-bottom:14px;padding-left:4px;">⚙️ Account</div>
+      <div class="g3">
+        <a href="notifications.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">🔔</div>
+          <div style="font-weight:700;margin-bottom:4px;">Notifications</div>
+          <div style="font-size:12px;color:var(--ink-30);">Streak alerts, session reminders, score updates</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+        <a href="parent-portal.html" class="card" style="text-decoration:none;color:inherit;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:12px;right:12px;background:var(--premium-color);color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:999px;letter-spacing:.05em;">👑 PREMIUM</div>
+          <div style="font-size:28px;margin-bottom:10px;">👨‍👩‍👧</div>
+          <div style="font-weight:700;margin-bottom:4px;">Parent Portal</div>
+          <div style="font-size:12px;color:var(--ink-30);">Multi-child monitoring, progress reports, activity feed</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+        <a href="account-settings.html" class="card" style="text-decoration:none;color:inherit;">
+          <div style="font-size:28px;margin-bottom:10px;">⚙️</div>
+          <div style="font-weight:700;margin-bottom:4px;">Account &amp; Settings</div>
+          <div style="font-size:12px;color:var(--ink-30);">Profile, billing, language, notifications, danger zone</div>
+          <div style="margin-top:12px;font-size:11px;color:var(--azure-vivid);font-weight:700;">Open →</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- footer -->
+<div style="background:var(--ink);padding:28px 48px;text-align:center;">
+  <div style="font-size:12px;color:rgba(255,255,255,.3);">Finkison v2.2.0 · Built in Ethiopia 🇪🇹 · <a href="pricing.html" style="color:var(--gold);">Plans</a> · <a href="signin.html" style="color:var(--gold);">Sign In</a></div>
+</div>
+
+</body>
+</html>
