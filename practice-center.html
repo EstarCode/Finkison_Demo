@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Finkison — Practice Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="shared.css"><style>
+.option-row{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1.5px solid var(--border);border-radius:var(--radius-md);cursor:pointer;transition:all var(--t-fast);margin-bottom:10px}
+.option-row:hover{border-color:var(--azure-vivid);background:var(--azure-pale)}
+.option-row.selected{border-color:var(--azure-vivid);background:var(--azure-pale)}
+.option-row.correct{border-color:var(--teal-vivid);background:var(--teal-pale)}
+.option-row.wrong{border-color:var(--scarlet);background:var(--scarlet-pale)}
+.option-letter{width:32px;height:32px;border-radius:50%;background:var(--bg-alt);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.option-row.selected .option-letter{background:var(--azure-vivid);color:#fff;border-color:var(--azure-vivid)}
+.option-row.correct .option-letter{background:var(--teal-vivid);color:#fff;border-color:var(--teal-vivid)}
+.option-row.wrong .option-letter{background:var(--scarlet);color:#fff;border-color:var(--scarlet)}
+</style>
+</head>
+<body>
+<div class="app">
+<nav class="top-nav">
+  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
+  <div class="nav-spacer"></div>
+  <div class="plan-badge plan-premium">👑 Premium Active</div>
+  <a href="notifications.html" class="nav-icon-btn"><div class="notif-dot"></div>🔔</a>
+  <a href="account-settings.html" class="btn btn-ghost-white btn-sm">⚙️</a>
+</nav>
+<div class="app-body">
+<nav class="side-nav" id="sidebar"></nav>
+<main class="main">
+
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+  <div><div class="pg-eyebrow">✏️ Adaptive Session</div><h2 class="pg-title" style="margin-bottom:0;">Practice Center</h2></div>
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span id="timer" style="font-family:var(--font-mono);font-size:13px;color:var(--gold-vivid);font-weight:700;background:rgba(240,185,41,.1);padding:5px 12px;border-radius:var(--radius-pill);border:1px solid rgba(240,185,41,.2);">⏱ 12:30</span>
+    <span class="badge badge-azure">Question 4 / 15</span>
+    <span style="font-size:11px;background:#FEF3E2;color:#92400E;padding:3px 10px;border-radius:999px;font-weight:700;">Mathematics · Algebra</span>
+  </div>
+</div>
+<div style="height:6px;background:var(--border);border-radius:999px;margin-bottom:24px;overflow:hidden;"><div style="height:100%;width:26%;background:linear-gradient(90deg,var(--azure-vivid),var(--azure));border-radius:999px;"></div></div>
+<div class="card" style="max-width:780px;">
+  <div style="display:flex;gap:10px;margin-bottom:20px;"><span class="badge badge-azure">MEDIUM</span><span style="font-size:11px;background:var(--bg-alt);color:var(--ink-60);padding:3px 10px;border-radius:999px;font-weight:600;">Quadratic Equations</span></div>
+  <div style="font-size:16px;font-weight:600;line-height:1.55;margin-bottom:24px;">Solve for <em>x</em>: &nbsp;<span style="font-family:var(--font-mono);background:var(--bg-alt);padding:4px 12px;border-radius:6px;">2x² − 5x − 3 = 0</span></div>
+  <div id="options">
+    <div class="option-row" onclick="selectOpt(this)"><div class="option-letter">A</div><span style="font-family:var(--font-mono);">x = 3, x = −½</span></div>
+    <div class="option-row" onclick="selectOpt(this)"><div class="option-letter">B</div><span style="font-family:var(--font-mono);">x = −3, x = ½</span></div>
+    <div class="option-row" onclick="selectOpt(this)"><div class="option-letter">C</div><span style="font-family:var(--font-mono);">x = 3, x = ½</span></div>
+    <div class="option-row" onclick="selectOpt(this)"><div class="option-letter">D</div><span style="font-family:var(--font-mono);">x = −3, x = −½</span></div>
+  </div>
+  <div id="explanation" class="hidden" style="margin-top:18px;padding:16px;background:var(--teal-pale);border-radius:var(--radius-md);border-left:4px solid var(--teal-vivid);">
+    <div style="font-weight:700;color:var(--teal);margin-bottom:6px;">✓ Correct! Well done.</div>
+    <div style="font-size:13px;color:var(--ink-60);">Factoring: <span style="font-family:var(--font-mono);">(2x + 1)(x − 3) = 0</span> gives <span style="font-family:var(--font-mono);">x = 3</span> and <span style="font-family:var(--font-mono);">x = −½</span>.</div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;flex-wrap:wrap;gap:10px;">
+    <button class="btn btn-ghost btn-sm">🚩 Flag for Review</button>
+    <div style="display:flex;gap:8px;"><button class="btn btn-ghost btn-sm">← Previous</button><button class="btn btn-primary" onclick="submitAnswer()">Submit Answer →</button></div>
+  </div>
+</div>
+<div class="card mt-md" style="max-width:780px;background:linear-gradient(135deg,#1A1A3E,#0D1225);border-color:rgba(124,58,237,.3);">
+  <div style="display:flex;gap:10px;align-items:center;">
+    <span style="font-size:20px;">🤖</span>
+    <div><div style="font-size:12px;font-weight:700;color:var(--gold-vivid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">AI Tutor</div><div style="font-size:13px;color:rgba(255,255,255,.7);">Need a hint? Ask about quadratic solving techniques.</div></div>
+    <button class="btn btn-sm" style="margin-left:auto;background:rgba(124,58,237,.3);color:#fff;border:1px solid rgba(124,58,237,.5);">Ask AI</button>
+  </div>
+</div>
+<script>
+let sec=750;const tel=document.getElementById('timer');
+setInterval(()=>{sec=Math.max(0,sec-1);const m=String(Math.floor(sec/60)).padStart(2,'0'),s=String(sec%60).padStart(2,'0');tel.textContent=`⏱ ${m}:${s}`},1000);
+function selectOpt(el){document.querySelectorAll('.option-row').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');}
+function submitAnswer(){const s=document.querySelector('.option-row.selected');if(!s){alert('Select an answer first.');return;}
+document.querySelectorAll('.option-row').forEach((o,i)=>{if(i===0)o.classList.add('correct');else if(o.classList.contains('selected'))o.classList.add('wrong');o.onclick=null;});
+document.getElementById('explanation').classList.remove('hidden');}
+</script>
+</main></div></div>
+<script src="nav.js"></script>
+</body></html>
