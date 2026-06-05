@@ -1,104 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finkison — Sign In</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
 <style>
-.role-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-md);font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid var(--border-dark);background:transparent;color:var(--ink-60);transition:all var(--t-fast);font-family:var(--font-body)}
-.role-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.otp-input{width:48px;height:50px;text-align:center;font-size:20px;padding:0;font-family:var(--font-mono);font-weight:700;border:1.5px solid var(--border);border-radius:var(--radius-md);background:var(--surface);color:var(--ink);transition:all var(--t-fast)}
-.otp-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-glow)}
+.role-btn{padding:8px 16px;border-radius:var(--r-full);border:1px solid var(--s-rim-hi);background:var(--ink-06);color:var(--ink-60);font-size:13px;font-weight:500;cursor:pointer;transition:all var(--dur-base);font-family:var(--font-body)}
+.role-btn:hover{background:var(--ink-10);color:var(--ink-100)}
+.role-btn.active{background:var(--c-gold-bg);color:var(--c-gold-hi);border-color:var(--c-gold-rim);font-weight:700}
+.otp-box{width:48px;height:54px;text-align:center;font-size:22px;font-family:var(--font-mono);font-weight:700;background:var(--ink-06);border:1.5px solid var(--s-rim-hi);border-radius:var(--r-md);color:var(--ink-100);outline:none;transition:all var(--dur-fast)}
+.otp-box:focus{border-color:var(--c-gold-hi);box-shadow:0 0 0 3px var(--c-gold-bg)}
+</style>
+<style>
+.role-btn{padding:8px 16px;border-radius:var(--r-full);border:1px solid var(--s-rim-hi);background:var(--ink-06);color:var(--ink-60);font-size:13px;font-weight:500;cursor:pointer;transition:all var(--dur-base);font-family:var(--font-body)}
+.role-btn:hover{background:var(--ink-10);color:var(--ink-100)}
+.role-btn.active{background:var(--c-gold-bg);color:var(--c-gold-hi);border-color:var(--c-gold-rim);font-weight:700}
+.otp-box{width:48px;height:54px;text-align:center;font-size:22px;font-family:var(--font-mono);font-weight:700;background:var(--ink-06);border:1.5px solid var(--s-rim-hi);border-radius:var(--r-md);color:var(--ink-100);outline:none;transition:all var(--dur-fast)}
+.otp-box:focus{border-color:var(--c-gold-hi);box-shadow:0 0 0 3px var(--c-gold-bg)}
 </style>
 </head>
 <body>
-<nav class="top-nav">
-  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
-  <div class="nav-spacer"></div>
-  <div style="display:flex;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.15);">
-    <button style="padding:5px 12px;font-size:11px;font-weight:600;background:var(--gold-vivid);color:var(--ink);border:none;cursor:pointer;font-family:var(--font-body);">EN</button>
-    <button style="padding:5px 12px;font-size:11px;font-weight:600;background:transparent;color:rgba(255,255,255,.55);border:none;cursor:pointer;font-family:var(--font-body);">አማ</button>
-    <button style="padding:5px 12px;font-size:11px;font-weight:600;background:transparent;color:rgba(255,255,255,.55);border:none;cursor:pointer;font-family:var(--font-body);">OM</button>
-  </div>
-</nav>
+<div class="app-shell">
 
-<div style="max-width:960px;margin:48px auto;padding:0 24px;">
-  <!-- Step 1: Phone -->
-  <div id="step1">
-    <div class="g2">
-      <div>
-        <div class="pg-eyebrow">🔐 Secure Authentication</div>
-        <h2 class="pg-title">Sign In to Finkison</h2>
-        <p class="pg-sub">Phone + OTP. No passwords. Fast and secure.</p>
-        <div class="card">
-          <div class="card-label">Select your role</div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;">
-            <button class="role-btn active" onclick="setRole(this)">👨‍🎓 Student</button>
-            <button class="role-btn" onclick="setRole(this)">👨‍👩‍👧 Parent</button>
-            <button class="role-btn" onclick="setRole(this)">🏫 School</button>
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
+
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div style="max-width:960px;margin:0 auto;">
+  <div class="g2" style="gap:40px;align-items:start;">
+    <div>
+      <div class="page-eyebrow">🔐 Secure Auth</div>
+      <h1 class="page-title">Welcome back</h1>
+      <p class="page-sub" style="margin-bottom:28px;">Phone + OTP — no passwords, no friction.</p>
+      <div class="card" style="margin-bottom:16px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-40);margin-bottom:14px;">Sign in as</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;" id="roles">
+          <button onclick="setRole(this,'student')" class="role-btn active">👨‍🎓 Student</button>
+          <button onclick="setRole(this,'parent')"  class="role-btn">👨‍👩‍👧 Parent</button>
+          <button onclick="setRole(this,'school')"  class="role-btn">🏫 School</button>
+          <button onclick="setRole(this,'admin')"   class="role-btn">🛠 Admin</button>
+        </div>
+        <div class="field">
+          <label class="label">Phone Number</label>
+          <div style="display:flex;gap:8px;">
+            <input class="input" value="+251" disabled style="width:72px;opacity:.6;">
+            <input class="input" id="phone" placeholder="912 345 678" style="flex:1;">
           </div>
-          <div class="form-group">
-            <label class="form-label">Phone Number</label>
-            <div style="display:flex;gap:8px;">
-              <input class="form-input" value="+251" disabled style="width:74px;background:var(--bg-alt);">
-              <input class="form-input" placeholder="912 345 678" id="phone-input">
-            </div>
-          </div>
-          <button class="btn btn-primary btn-lg btn-block" style="margin-top:8px;" onclick="showOTP()">Send Verification Code →</button>
-          <p style="font-size:12px;color:var(--ink-30);text-align:center;margin-top:12px;">OTP via SMS · Secure &amp; instant</p>
+        </div>
+        <button class="btn btn-gold btn-block btn-lg" style="margin-top:6px;" onclick="showOTP()">Send Verification Code →</button>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:20px;">
+          <div style="flex:1;height:1px;background:var(--s-rim);"></div>
+          <span style="font-size:11px;color:var(--ink-40);">or sign in with</span>
+          <div style="flex:1;height:1px;background:var(--s-rim);"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;">
+          <button class="btn btn-ghost" style="gap:8px;">🌐 Google</button>
+          <button class="btn btn-ghost" style="gap:8px;">📱 Telebirr ID</button>
         </div>
       </div>
-      <div class="card" style="background:linear-gradient(160deg,var(--ink) 0%,var(--ink-90) 100%);border-color:rgba(255,255,255,.08);">
-        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-vivid);margin-bottom:16px;">Why Finkison?</div>
-        <div style="display:flex;flex-direction:column;gap:14px;font-size:13px;color:rgba(255,255,255,.7);">
-          <div>✓ <strong style="color:#fff;">Free plan included</strong> — start immediately</div>
-          <div>✓ <strong style="color:#fff;">Upgrade anytime</strong> — unlock AI features</div>
-          <div>✓ <strong style="color:#fff;">Offline access</strong> — practice anywhere</div>
-          <div>✓ <strong style="color:#fff;">Bilingual</strong> — English, Amharic, Oromo</div>
-          <div>✓ <strong style="color:#fff;">Any device</strong> — web, mobile, USSD</div>
-        </div>
-        <a href="pricing.html" class="btn btn-ghost-white btn-sm" style="margin-top:20px;">View All Plans →</a>
-      </div>
+      <p style="font-size:12px;color:var(--ink-40);text-align:center;">Don't have an account? <a href="getting-started.html" style="color:var(--c-gold-hi);font-weight:600;">Get started free →</a></p>
     </div>
-  </div>
-
-  <!-- Step 2: OTP -->
-  <div id="step2" class="hidden">
-    <div style="max-width:440px;margin:0 auto;text-align:center;">
-      <div style="font-size:48px;margin-bottom:12px;">📲</div>
-      <h2 class="pg-title" style="text-align:center;">Verify Your Number</h2>
-      <p class="pg-sub" style="text-align:center;">Enter the 6-digit code sent to <strong>+251 912 345 678</strong></p>
+    <!-- OTP step hidden by default -->
+    <div id="otp-step" class="hidden">
+      <div class="page-eyebrow">📲 Verify</div>
+      <h1 class="page-title">Check your phone</h1>
+      <p class="page-sub" style="margin-bottom:28px;">Enter the 6-digit code sent to <strong style="color:var(--ink-100);">+251 912 345 678</strong></p>
       <div class="card">
         <div style="display:flex;gap:10px;justify-content:center;margin-bottom:24px;">
-          <input class="otp-input" type="text" maxlength="1">
-          <input class="otp-input" type="text" maxlength="1">
-          <input class="otp-input" type="text" maxlength="1">
-          <input class="otp-input" type="text" maxlength="1">
-          <input class="otp-input" type="text" maxlength="1">
-          <input class="otp-input" type="text" maxlength="1">
+          <input class="otp-box" type="text" maxlength="1">
+          <input class="otp-box" type="text" maxlength="1">
+          <input class="otp-box" type="text" maxlength="1">
+          <input class="otp-box" type="text" maxlength="1">
+          <input class="otp-box" type="text" maxlength="1">
+          <input class="otp-box" type="text" maxlength="1">
         </div>
-        <a href="getting-started.html" class="btn btn-primary btn-lg btn-block">Verify &amp; Continue →</a>
-        <p style="font-size:12px;color:var(--ink-30);text-align:center;margin-top:16px;">Didn't get it? <span style="color:var(--gold);cursor:pointer;font-weight:700;" onclick="this.textContent='Sent!'">Resend</span></p>
+        <a href="getting-started.html" class="btn btn-gold btn-block btn-lg">Verify &amp; Continue →</a>
+        <div style="text-align:center;margin-top:14px;font-size:12px;color:var(--ink-40);">Didn't receive it? <span style="color:var(--c-gold-hi);cursor:pointer;font-weight:600;" onclick="this.textContent='Sent!'">Resend OTP</span></div>
+      </div>
+      <button class="btn btn-ghost btn-sm" style="margin-top:12px;" onclick="hideOTP()">← Back</button>
+    </div>
+    <!-- Benefits panel -->
+    <div id="benefits-panel">
+      <div class="card" style="background:linear-gradient(160deg,rgba(242,183,5,.06),var(--s-card));">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c-gold-hi);margin-bottom:18px;">Why Finkison?</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:12px;"><span style="font-size:18px;">🧠</span><div><div style="font-weight:600;color:var(--ink-100);font-size:13px);margin-bottom:3px;">AI that learns with you</div><div style="font-size:12px;color:var(--ink-60);">Adaptive paths rebuild every day based on your performance.</div></div></div>
+          <div style="display:flex;gap:12px;"><span style="font-size:18px;">📊</span><div><div style="font-weight:600;color:var(--ink-100);font-size:13px;margin-bottom:3px;">Know your exact score</div><div style="font-size:12px;color:var(--ink-60);">Predict your exam result within ±5 points.</div></div></div>
+          <div style="display:flex;gap:12px;"><span style="font-size:18px;">📶</span><div><div style="font-weight:600;color:var(--ink-100);font-size:13px;margin-bottom:3px;">Works everywhere</div><div style="font-size:12px;color:var(--ink-60);">Offline caching + USSD for zero-internet zones.</div></div></div>
+          <div style="display:flex;gap:12px;"><span style="font-size:18px;">🌐</span><div><div style="font-weight:600;color:var(--ink-100);font-size:13px;margin-bottom:3px;">Your language</div><div style="font-size:12px;color:var(--ink-60);">English, Amharic, and Oromo interface.</div></div></div>
+        </div>
+        <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--s-rim);">
+          <a href="pricing.html" class="btn btn-ghost-gold btn-sm btn-block">View Plans &amp; Pricing →</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<script src="nav.js"></script>
 <script>
+function setRole(el){document.querySelectorAll('.role-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');}
 function showOTP(){
-  document.getElementById('step1').classList.add('hidden');
-  document.getElementById('step2').classList.remove('hidden');
+  document.getElementById('otp-step').classList.remove('hidden');
+  document.getElementById('benefits-panel').classList.add('hidden');
 }
-function setRole(el){
-  document.querySelectorAll('.role-btn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');
+function hideOTP(){
+  document.getElementById('otp-step').classList.add('hidden');
+  document.getElementById('benefits-panel').classList.remove('hidden');
 }
-document.querySelectorAll('.otp-input').forEach((inp,i,arr)=>{
-  inp.addEventListener('input',()=>{if(inp.value&&arr[i+1])arr[i+1].focus()});
-});
+document.querySelectorAll('.otp-box').forEach((b,i,a)=>{b.addEventListener('input',()=>{if(b.value&&a[i+1])a[i+1].focus();});});
 </script>
+
+
+</div></div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mobile-menu-btn');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
+  </div>
+</div>
+<script src="nav.js"></script>
 </body>
 </html>
