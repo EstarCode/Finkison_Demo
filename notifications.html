@@ -1,34 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finkison — Notifications</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="shared.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
+
 </head>
 <body>
-<div class="app">
-<nav class="top-nav">
-  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
-  <div class="nav-spacer"></div>
-  <div class="plan-badge plan-premium">👑 Premium Active</div>
-  <a href="notifications.html" class="nav-icon-btn"><div class="notif-dot"></div>🔔</a>
-  <a href="account-settings.html" class="btn btn-ghost-white btn-sm">⚙️</a>
-</nav>
-<div class="app-body">
-<nav class="side-nav" id="sidebar"></nav>
-<main class="main">
+<div class="app-shell">
 
-<div class="pg-eyebrow">🔔 Alerts &amp; Updates</div>
-<h2 class="pg-title">Notifications</h2>
-<p class="pg-sub">Stay on top of your study goals, sessions, and achievements.</p>
-<div style="display:flex;flex-direction:column;gap:10px;max-width:680px;">
-  <div style="padding:16px;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);border-left:4px solid var(--gold-vivid);box-shadow:var(--shadow-xs);display:flex;gap:12px;align-items:flex-start;"><span style="font-size:20px;">🔥</span><div style="flex:1;"><div style="font-weight:700;font-size:13px;margin-bottom:3px;">8-Day Streak! Keep it going!</div><div style="font-size:12px;color:var(--ink-30);">You've studied 8 days in a row. Don't break the streak — open today's session.</div><div style="font-size:11px;color:var(--ink-30);margin-top:6px;">2 min ago</div></div><a href="practice-center.html" class="btn btn-primary btn-sm">Practice</a></div>
-  <div style="padding:16px;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);border-left:4px solid var(--azure-vivid);box-shadow:var(--shadow-xs);display:flex;gap:12px;align-items:flex-start;"><span style="font-size:20px;">📅</span><div style="flex:1;"><div style="font-weight:700;font-size:13px;margin-bottom:3px;">Live Session in 30 Minutes</div><div style="font-size:12px;color:var(--ink-30);">Advanced Algebra Masterclass with Ato Bekele starts at 4:00 PM.</div><div style="font-size:11px;color:var(--ink-30);margin-top:6px;">25 min ago</div></div><a href="learning-community.html" class="btn btn-azure btn-sm">Join</a></div>
-  <div style="padding:16px;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);border-left:4px solid var(--teal-vivid);box-shadow:var(--shadow-xs);display:flex;gap:12px;align-items:flex-start;"><span style="font-size:20px;">🏆</span><div style="flex:1;"><div style="font-weight:700;font-size:13px;margin-bottom:3px;">You climbed 3 spots on the Leaderboard</div><div style="font-size:12px;color:var(--ink-30);">You're now #47 nationally. Keep up the great work!</div><div style="font-size:11px;color:var(--ink-30);margin-top:6px;">3 hours ago</div></div><a href="leaderboard.html" class="btn btn-ghost btn-sm">View</a></div>
-  <div style="padding:16px;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);border-left:4px solid var(--premium-color);box-shadow:var(--shadow-xs);display:flex;gap:12px;align-items:flex-start;"><span style="font-size:20px;">🧠</span><div style="flex:1;"><div style="font-weight:700;font-size:13px;margin-bottom:3px;">AI Score Prediction Updated</div><div style="font-size:12px;color:var(--ink-30);">Your predicted exam score is now <strong>385</strong>, up from 371 last week.</div><div style="font-size:11px;color:var(--ink-30);margin-top:6px;">Yesterday</div></div><a href="performance-insights.html" class="btn btn-ghost btn-sm">View</a></div>
-  <div style="padding:16px;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);border-left:4px solid var(--ink-30);box-shadow:var(--shadow-xs);display:flex;gap:12px;align-items:flex-start;opacity:.65;"><span style="font-size:20px;">📊</span><div style="flex:1;"><div style="font-weight:700;font-size:13px;margin-bottom:3px;">Weekly Report Ready</div><div style="font-size:12px;color:var(--ink-30);">Your week-of-May-20 summary: 89 questions answered, +3% accuracy improvement.</div><div style="font-size:11px;color:var(--ink-30);margin-top:6px;">May 27</div></div><button class="btn btn-ghost btn-sm">Read</button></div>
-  <div style="padding:16px;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);border-left:4px solid #059669;box-shadow:var(--shadow-xs);display:flex;gap:12px;align-items:flex-start;opacity:.65;"><span style="font-size:20px;">🎬</span><div style="flex:1;"><div style="font-weight:700;font-size:13px;margin-bottom:3px;">New Video: Trigonometry Full Walkthrough</div><div style="font-size:12px;color:var(--ink-30);">Added to your Video Library. Ato Bekele · 40 min.</div><div style="font-size:11px;color:var(--ink-30);margin-top:6px;">May 26</div></div><a href="video-library.html" class="btn btn-ghost btn-sm">Watch</a></div>
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
+
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div class="flex items-center justify-between flex-wrap gap-2" style="margin-bottom:28px;">
+  <div>
+    <div class="page-eyebrow">🔔 Updates &amp; Alerts</div>
+    <h1 class="page-title">Notifications</h1>
+    <p class="page-sub">Streak alerts, session reminders, score updates, and community activity.</p>
+  </div>
+  <div style="display:flex;gap:8px;">
+    <button class="btn btn-ghost btn-sm" onclick="document.querySelectorAll('.notif-item').forEach(n=>n.style.opacity='.5')">Mark all read</button>
+  </div>
 </div>
-</main></div></div>
+<div style="max-width:680px;display:flex;flex-direction:column;gap:10px;" class="fade-up">
+  <div class="notif-item" style="padding:16px;background:var(--s-card);border-radius:var(--r-xl);border:1px solid var(--c-gold-rim);box-shadow:var(--sh-gold);display:flex;gap:14px;align-items:flex-start;">
+    <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#F59E0B,#B45309);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🔥</div>
+    <div style="flex:1;"><div style="font-weight:700;font-size:14px;color:var(--ink-100);margin-bottom:4px;">8-Day Streak! Don't break it.</div><div style="font-size:13px;color:var(--ink-60);">You've studied 8 consecutive days. Open today's session to keep the streak alive.</div><div style="font-size:11px;color:var(--ink-40);margin-top:6px;">2 minutes ago</div></div>
+    <a href="practice-center.html" class="btn btn-gold btn-sm" style="flex-shrink:0;">Practice</a>
+  </div>
+  <div class="notif-item" style="padding:16px;background:var(--s-card);border-radius:var(--r-xl);border:1px solid var(--c-azure-rim);display:flex;gap:14px;align-items:flex-start;">
+    <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--c-azure-hi),var(--c-azure));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">📅</div>
+    <div style="flex:1;"><div style="font-weight:700;font-size:14px;color:var(--ink-100);margin-bottom:4px;">Live Session in 30 Minutes</div><div style="font-size:13px;color:var(--ink-60);">Advanced Algebra Masterclass with Ato Bekele starts at 4:00 PM today.</div><div style="font-size:11px;color:var(--ink-40);margin-top:6px;">25 minutes ago</div></div>
+    <a href="learning-community.html" class="btn btn-azure btn-sm" style="flex-shrink:0;">Join</a>
+  </div>
+  <div class="notif-item" style="padding:16px;background:var(--s-card);border-radius:var(--r-xl);border:1px solid var(--c-teal-rim);display:flex;gap:14px;align-items:flex-start;">
+    <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--c-teal-hi),var(--c-teal));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🏆</div>
+    <div style="flex:1;"><div style="font-weight:700;font-size:14px;color:var(--ink-100);margin-bottom:4px;">Climbed 3 Spots on Leaderboard</div><div style="font-size:13px;color:var(--ink-60);">You're now #47 nationally. You're in the top 0.1% of all Finkison students this week.</div><div style="font-size:11px;color:var(--ink-40);margin-top:6px;">3 hours ago</div></div>
+    <a href="leaderboard.html" class="btn btn-ghost btn-sm" style="flex-shrink:0;">View</a>
+  </div>
+  <div class="notif-item" style="padding:16px;background:var(--s-card);border-radius:var(--r-xl);border:1px solid var(--c-violet-rim);display:flex;gap:14px;align-items:flex-start;">
+    <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--c-violet-hi),var(--c-violet));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🧠</div>
+    <div style="flex:1;"><div style="font-weight:700;font-size:14px;color:var(--ink-100);margin-bottom:4px;">AI Score Prediction Updated: 423</div><div style="font-size:13px;color:var(--ink-60);">Up from 385 last week. At this pace you'll reach your 480 target in 74 days.</div><div style="font-size:11px;color:var(--ink-40);margin-top:6px;">Yesterday</div></div>
+    <a href="performance-insights.html" class="btn btn-ghost btn-sm" style="flex-shrink:0;">Details</a>
+  </div>
+  <div class="notif-item" style="padding:16px;background:var(--s-card);border-radius:var(--r-xl);border:1px solid var(--s-rim);display:flex;gap:14px;align-items:flex-start;opacity:.65;">
+    <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#059669,#064E3B);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🎬</div>
+    <div style="flex:1;"><div style="font-weight:700;font-size:14px;color:var(--ink-100);margin-bottom:4px;">New Video: Trigonometry Full Walkthrough (40 min)</div><div style="font-size:13px;color:var(--ink-60);">Ato Bekele just uploaded a comprehensive trigonometry masterclass to your Video Library.</div><div style="font-size:11px;color:var(--ink-40);margin-top:6px;">May 28</div></div>
+    <a href="video-library.html" class="btn btn-ghost btn-sm" style="flex-shrink:0;">Watch</a>
+  </div>
+  <div class="notif-item" style="padding:16px;background:var(--s-card);border-radius:var(--r-xl);border:1px solid var(--s-rim);display:flex;gap:14px;align-items:flex-start;opacity:.65;">
+    <div style="width:40px;height:40px;border-radius:50%;background:var(--ink-10);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">📊</div>
+    <div style="flex:1;"><div style="font-weight:700;font-size:14px;color:var(--ink-100);margin-bottom:4px;">Weekly Report Ready — Week of May 20</div><div style="font-size:13px;color:var(--ink-60);">89 questions answered, +3% accuracy improvement, 6.5 study hours. Full PDF report ready.</div><div style="font-size:11px;color:var(--ink-40);margin-top:6px;">May 27</div></div>
+    <button class="btn btn-ghost btn-sm" style="flex-shrink:0;">Read</button>
+  </div>
+</div>
+
+</div></div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mm');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
+  </div>
+</div>
 <script src="nav.js"></script>
-</body></html>
+</body>
+</html>
