@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finkison — School Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
+
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
+
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div class="flex items-center justify-between flex-wrap gap-2" style="margin-bottom:28px;">
+  <div>
+    <div class="page-eyebrow">🏫 Premium Feature</div>
+    <h1 class="page-title">School Admin Dashboard</h1>
+    <p class="page-sub">Monitor all enrolled students, track cohort performance, and generate school-wide reports.</p>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <button class="btn btn-ghost btn-sm">📥 Export Report</button>
+    <button class="btn btn-gold btn-sm">+ Invite Students</button>
+  </div>
+</div>
+<div class="g4 fade-up delay-1" style="margin-bottom:24px;">
+  <div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,var(--c-azure-hi),var(--c-azure));"></div><div class="stat-lbl">Enrolled Students</div><div class="stat-val">284</div><div class="stat-delta delta-up">↑ +12 this month</div></div>
+  <div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,var(--c-teal-hi),var(--c-teal));"></div><div class="stat-lbl">Avg Predicted Score</div><div class="stat-val">361</div><div class="stat-delta delta-up">↑ +24 since enrolment</div></div>
+  <div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,var(--c-gold-hi),var(--c-gold));"></div><div class="stat-lbl">Active This Week</div><div class="stat-val">79%</div><div class="stat-delta delta-up">↑ +8% vs last term</div></div>
+  <div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,var(--c-violet-hi),var(--c-violet));"></div><div class="stat-lbl">School Rank (National)</div><div class="stat-val">#12</div><div class="stat-delta delta-up">↑ Climbed 3 spots</div></div>
+</div>
+<div class="g2 fade-up delay-2">
+  <div class="card">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:18px;">Top 5 Students This Week</div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div style="display:flex;align-items:center;gap:12px;padding:11px;background:var(--c-gold-bg);border:1px solid var(--c-gold-rim);border-radius:var(--r-lg);"><span style="font-size:16px;">🥇</span><div style="flex:1;font-weight:600;font-size:13px;color:var(--ink-100);">Kebede Alemu</div><span class="badge badge-gold">423 pts</span></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:11px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);"><span style="font-size:16px;">🥈</span><div style="flex:1;font-weight:600;font-size:13px;color:var(--ink-80);">Mekdes Haile</div><span class="badge badge-azure">411 pts</span></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:11px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);"><span style="font-size:16px;">🥉</span><div style="flex:1;font-weight:600;font-size:13px;color:var(--ink-80);">Biruk Tesfaye</div><span class="badge badge-teal">398 pts</span></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:11px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);"><span style="color:var(--ink-40);font-weight:700;width:18px;text-align:center;">4</span><div style="flex:1;font-weight:600;font-size:13px;color:var(--ink-80);">Tigist Bekele</div><span class="badge badge-dim">387 pts</span></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:11px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);"><span style="color:var(--ink-40);font-weight:700;width:18px;text-align:center;">5</span><div style="flex:1;font-weight:600;font-size:13px;color:var(--ink-80);">Yonas Girma</div><span class="badge badge-dim">371 pts</span></div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:14px;">
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:14px;">Subject Averages (School)</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--ink-80);margin-bottom:5px;"><span>Mathematics</span><span>64%</span></div><div class="progress-track"><div class="progress-fill" style="width:64%;--fill-a:var(--c-azure-hi);--fill-b:var(--c-azure);"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--ink-80);margin-bottom:5px;"><span>Physics</span><span>57%</span></div><div class="progress-track"><div class="progress-fill" style="width:57%;--fill-a:#F59E0B;--fill-b:#B45309;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--ink-80);margin-bottom:5px;"><span>Chemistry</span><span>71%</span></div><div class="progress-track"><div class="progress-fill" style="width:71%;--fill-a:var(--c-teal-hi);--fill-b:var(--c-teal);"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--ink-80);margin-bottom:5px;"><span>English</span><span>66%</span></div><div class="progress-track"><div class="progress-fill" style="width:66%;--fill-a:var(--c-azure-hi);--fill-b:var(--c-azure);"></div></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:14px;">⚠️ At-Risk Students</div>
+      <div style="font-size:13px;color:var(--ink-60);margin-bottom:12px;">3 students haven't studied in 7+ days</div>
+      <button class="btn btn-ghost btn-sm btn-block">Send Reminder SMS</button>
+    </div>
+  </div>
+</div>
+
+</div></div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mm');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
+  </div>
+</div>
+<script src="nav.js"></script>
+</body>
+</html>
