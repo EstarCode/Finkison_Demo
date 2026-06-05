@@ -1,56 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finkison — Learning Hub</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="shared.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
 
 </head>
 <body>
-<div class="app">
-<nav class="top-nav">
-  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
-  <div class="nav-spacer"></div>
-  <div class="plan-badge plan-premium">👑 Premium Active</div>
-  <a href="notifications.html" class="nav-icon-btn"><div class="notif-dot"></div>🔔</a>
-  <a href="account-settings.html" class="btn btn-ghost-white btn-sm">⚙️</a>
-</nav>
-<div class="app-body">
-<nav class="side-nav" id="sidebar"></nav>
-<main class="main">
+<div class="app-shell">
 
-<div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:24px;">
-  <div><div class="pg-eyebrow">Welcome back, Kebede 👋</div><h2 class="pg-title">Learning Hub</h2><p class="pg-sub" style="margin-bottom:0;">AI-personalized progress, recommendations, and real-time insights.</p></div>
-  <a href="practice-center.html" class="btn btn-primary">▶ Start Practice</a>
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
+
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div class="flex items-center justify-between flex-wrap gap-2" style="margin-bottom:28px;">
+  <div>
+    <div class="page-eyebrow">Welcome back, Kebede 👋</div>
+    <h1 class="page-title">Learning Hub</h1>
+    <p class="page-sub">Your AI-personalised command centre for exam mastery.</p>
+  </div>
+  <div class="flex gap-2 flex-wrap">
+    <a href="study-planner.html" class="btn btn-ghost btn-sm">📅 View Schedule</a>
+    <a href="practice-center.html" class="btn btn-gold">▶ Start Practice</a>
+  </div>
 </div>
-<div class="g4">
-  <div class="stat-card" style="--bar-color:var(--azure-vivid);--stat-color:var(--azure)"><div class="stat-label"><span class="ai-chip">AI</span> Predicted Score</div><div class="stat-accent">385</div><div class="stat-delta delta-up">↑ +14 this week</div></div>
-  <div class="stat-card" style="--bar-color:var(--gold-vivid);--stat-color:var(--gold)"><div class="stat-label">Study Streak</div><div class="stat-accent">🔥 8</div><div class="stat-delta delta-up">Personal best!</div></div>
-  <div class="stat-card" style="--bar-color:var(--teal-vivid);--stat-color:var(--teal)"><div class="stat-label"><span class="ai-chip">AI</span> Weak Areas</div><div class="stat-accent">3</div><div class="stat-delta delta-neutral">Targeted focus</div></div>
-  <div class="stat-card" style="--bar-color:var(--premium-color);--stat-color:var(--premium-color)"><div class="stat-label">Days to Exam</div><div class="stat-accent">74</div><div class="stat-delta delta-neutral">Goal: 480</div></div>
+
+<!-- STATS ROW -->
+<div class="g4 fade-up delay-1" style="margin-bottom:24px;">
+  <div class="stat-card card-glow-gold">
+    <div class="accent-line" style="background:linear-gradient(90deg,var(--c-gold-hi),var(--c-gold));"></div>
+    <div class="stat-lbl">AI Predicted Score</div>
+    <div class="stat-val">423</div>
+    <div class="stat-delta delta-up">↑ +38 since January</div>
+    <div style="font-size:11px;color:var(--ink-40);margin-top:6px;">Target: 480 · 57 pts away</div>
+  </div>
+  <div class="stat-card">
+    <div class="accent-line" style="background:linear-gradient(90deg,#F59E0B,#B45309);"></div>
+    <div class="stat-lbl">Study Streak</div>
+    <div class="stat-val">🔥 8</div>
+    <div class="stat-delta delta-up">Personal best!</div>
+    <div style="font-size:11px;color:var(--ink-40);margin-top:6px;">Don't break it today</div>
+  </div>
+  <div class="stat-card">
+    <div class="accent-line" style="background:linear-gradient(90deg,var(--c-teal-hi),var(--c-teal));"></div>
+    <div class="stat-lbl">Overall Accuracy</div>
+    <div class="stat-val">74%</div>
+    <div class="stat-delta delta-up">↑ +3% this month</div>
+    <div style="font-size:11px;color:var(--ink-40);margin-top:6px;">1,240 questions answered</div>
+  </div>
+  <div class="stat-card">
+    <div class="accent-line" style="background:linear-gradient(90deg,var(--c-violet-hi),var(--c-violet));"></div>
+    <div class="stat-lbl">Days to Exam</div>
+    <div class="stat-val">74</div>
+    <div class="stat-delta delta-flat">Goal: 480 pts</div>
+    <div style="font-size:11px;color:var(--ink-40);margin-top:6px;">Need 45 min/day</div>
+  </div>
 </div>
-<div class="g2 mt-lg">
+
+<!-- MAIN GRID -->
+<div class="g2 fade-up delay-2" style="margin-bottom:24px;">
+  <!-- Subject progress -->
   <div class="card">
-    <div class="card-label">📐 <span class="ai-chip">AI-Optimized</span> Subject Focus</div>
-    <div style="display:flex;flex-direction:column;gap:14px;margin-top:12px;">
-      <div><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px;"><span>Mathematics</span><span class="badge badge-azure">78%</span></div><div class="progress-track"><div class="progress-fill" style="width:78%;--fill-from:var(--azure-vivid);--fill-to:var(--azure)"></div></div><div style="font-size:10px;color:var(--ink-30);margin-top:3px;">Algebra weak · 5 recommended questions</div></div>
-      <div><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px;"><span>Physics</span><span class="badge badge-gold">69%</span></div><div class="progress-track"><div class="progress-fill" style="width:69%;--fill-from:#F59E0B;--fill-to:#B45309"></div></div><div style="font-size:10px;color:var(--ink-30);margin-top:3px;">Review force & motion concepts</div></div>
-      <div><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px;"><span>Chemistry</span><span class="badge badge-teal">83%</span></div><div class="progress-track"><div class="progress-fill" style="width:83%;--fill-from:var(--teal-vivid);--fill-to:var(--teal)"></div></div><div style="font-size:10px;color:var(--ink-30);margin-top:3px;">Strong performance ✓</div></div>
-      <div><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px;"><span>English</span><span class="badge badge-azure">71%</span></div><div class="progress-track"><div class="progress-fill" style="width:71%;--fill-from:var(--azure-vivid);--fill-to:var(--azure)"></div></div><div style="font-size:10px;color:var(--ink-30);margin-top:3px;">Grammar sections need work</div></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);">Subject Mastery</div>
+      <span class="badge ai-badge">AI-Optimised</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+          <span style="font-weight:600;font-size:13px;">Mathematics</span>
+          <div style="display:flex;align-items:center;gap:8px;"><span class="badge badge-azure">78%</span><span style="font-size:11px;color:var(--ink-40);">▲ +5%</span></div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" style="width:78%;--fill-a:var(--c-azure-hi);--fill-b:var(--c-azure);"></div></div>
+        <div style="font-size:11px;color:var(--ink-40);margin-top:4px;">Focus: Algebra quadratics · 5 Qs recommended</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+          <span style="font-weight:600;font-size:13px;">Physics</span>
+          <div style="display:flex;align-items:center;gap:8px;"><span class="badge badge-amber">69%</span><span style="font-size:11px;color:var(--c-rose-hi);">▼ −2%</span></div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" style="width:69%;--fill-a:#F59E0B;--fill-b:#B45309;"></div></div>
+        <div style="font-size:11px;color:var(--ink-40);margin-top:4px;">Weak: Force diagrams · Needs immediate work</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+          <span style="font-weight:600;font-size:13px;">Chemistry</span>
+          <div style="display:flex;align-items:center;gap:8px;"><span class="badge badge-teal">83%</span><span style="font-size:11px;color:var(--c-teal-hi);">▲ +7%</span></div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" style="width:83%;--fill-a:var(--c-teal-hi);--fill-b:var(--c-teal);"></div></div>
+        <div style="font-size:11px;color:var(--ink-40);margin-top:4px;">Strong performance — maintain momentum ✓</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+          <span style="font-weight:600;font-size:13px;">English</span>
+          <div style="display:flex;align-items:center;gap:8px;"><span class="badge badge-azure">71%</span><span style="font-size:11px;color:var(--ink-40);">→ stable</span></div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" style="width:71%;--fill-a:var(--c-azure-hi);--fill-b:var(--c-azure);"></div></div>
+        <div style="font-size:11px;color:var(--ink-40);margin-top:4px;">Grammar sections flagged — review idioms</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+          <span style="font-weight:600;font-size:13px;">Biology</span>
+          <div style="display:flex;align-items:center;gap:8px;"><span class="badge badge-teal">80%</span><span style="font-size:11px;color:var(--c-teal-hi);">▲ +3%</span></div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" style="width:80%;--fill-a:var(--c-teal-hi);--fill-b:var(--c-teal);"></div></div>
+        <div style="font-size:11px;color:var(--ink-40);margin-top:4px;">Genetics strong · cell processes improving</div>
+      </div>
     </div>
   </div>
+  <!-- AI Recommendations -->
   <div class="card">
-    <div class="card-label">🚀 Today's AI Recommendations</div>
-    <div style="display:flex;flex-direction:column;gap:10px;margin-top:10px;">
-      <div style="padding:14px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><div style="display:flex;justify-content:space-between;align-items:center;"><div style="font-weight:600;font-size:13px;">Algebra: Quadratic Equations</div><span style="font-size:10px;background:#FEF3E2;color:#92400E;padding:2px 8px;border-radius:999px;font-weight:700;">HIGH PRIORITY</span></div><div style="font-size:11px;color:var(--ink-30);margin-top:4px;">15 adaptive questions · ~20 min</div></div>
-      <div style="padding:14px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><div style="font-weight:600;font-size:13px;">Physics: Newton's Laws Review</div><div style="font-size:11px;color:var(--ink-30);margin-top:4px;">10 questions · ~15 min</div></div>
-      <div style="padding:14px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><div style="font-weight:600;font-size:13px;">English: Reading Comprehension</div><div style="font-size:11px;color:var(--ink-30);margin-top:4px;">5 passages · ~25 min</div></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);">Today's AI Plan</div>
+      <span class="badge badge-gold">3 sessions</span>
     </div>
-    <a href="practice-center.html" class="btn btn-primary" style="margin-top:16px;width:100%;display:flex;">Start Recommended Session</a>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+      <div style="padding:14px 16px;background:var(--ink-06);border:1px solid var(--s-rim-hi);border-radius:var(--r-lg);border-left:3px solid var(--c-gold-hi);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+          <div style="font-weight:600;font-size:13px;color:var(--ink-100);">Algebra: Quadratic Equations</div>
+          <span class="badge badge-rose">HIGH PRIORITY</span>
+        </div>
+        <div style="font-size:12px;color:var(--ink-60);">15 adaptive questions · ~20 min · scored 42% last time</div>
+        <a href="practice-center.html" class="btn btn-gold btn-sm" style="margin-top:10px;">Start →</a>
+      </div>
+      <div style="padding:14px 16px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);border-left:3px solid var(--c-amber-hi);">
+        <div style="font-weight:600;font-size:13px;color:var(--ink-100);margin-bottom:6px;">Physics: Newton's Laws Review</div>
+        <div style="font-size:12px;color:var(--ink-60);">10 questions + video · ~15 min</div>
+        <a href="practice-center.html" class="btn btn-ghost btn-sm" style="margin-top:10px;">Start →</a>
+      </div>
+      <div style="padding:14px 16px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);border-left:3px solid var(--c-azure-hi);">
+        <div style="font-weight:600;font-size:13px;color:var(--ink-100);margin-bottom:6px;">English: Reading Comprehension</div>
+        <div style="font-size:12px;color:var(--ink-60);">2 passages · ~25 min</div>
+        <a href="practice-center.html" class="btn btn-ghost btn-sm" style="margin-top:10px;">Start →</a>
+      </div>
+    </div>
+    <div style="padding:14px;background:var(--c-gold-bg);border:1px solid var(--c-gold-rim);border-radius:var(--r-lg);">
+      <div style="font-size:11px;font-weight:700;color:var(--c-gold-hi);margin-bottom:4px;">🤖 AI Insight</div>
+      <div style="font-size:12px;color:var(--ink-60);">You perform 23% better between 6–9 AM. Your next 3 sessions are pre-scheduled for optimal learning.</div>
+    </div>
   </div>
 </div>
-</main>
+
+<!-- QUICK LINKS STRIP -->
+<div class="g4 fade-up delay-3">
+  <a href="adaptive-learning.html" class="card card-hover" style="text-decoration:none;">
+    <div style="font-size:22px;margin-bottom:10px;">🧠</div>
+    <div style="font-weight:600;font-size:13px;color:var(--ink-100);">Adaptive Paths</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-top:3px;">3 paths active</div>
+  </a>
+  <a href="performance-insights.html" class="card card-hover" style="text-decoration:none;">
+    <div style="font-size:22px;margin-bottom:10px;">📈</div>
+    <div style="font-weight:600;font-size:13px;color:var(--ink-100);">Insights</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-top:3px;">Heatmap updated</div>
+  </a>
+  <a href="exam-simulation.html" class="card card-hover" style="text-decoration:none;">
+    <div style="font-size:22px;margin-bottom:10px;">📝</div>
+    <div style="font-weight:600;font-size:13px;color:var(--ink-100);">Mock Exam</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-top:3px;">2 full exams ready</div>
+  </a>
+  <a href="leaderboard.html" class="card card-hover" style="text-decoration:none;">
+    <div style="font-size:22px;margin-bottom:10px;">🏆</div>
+    <div style="font-weight:600;font-size:13px;color:var(--ink-100);">Leaderboard</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-top:3px;">#47 nationally</div>
+  </a>
 </div>
+
+
+</div>
+</div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mobile-menu-btn');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
+  </div>
 </div>
 <script src="nav.js"></script>
 </body>
