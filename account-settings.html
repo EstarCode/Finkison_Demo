@@ -1,70 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finkison — Account & Settings</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="shared.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
+<style>
+.setting-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.setting-row:last-child{border-bottom:none}
+</style>
 </head>
 <body>
-<div class="app">
-<nav class="top-nav">
-  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
-  <div class="nav-spacer"></div>
-  <div class="plan-badge plan-premium">👑 Premium Active</div>
-  <a href="notifications.html" class="nav-icon-btn"><div class="notif-dot"></div>🔔</a>
-</nav>
-<div class="app-body">
-<nav class="side-nav" id="sidebar"></nav>
-<main class="main" style="max-width:780px;">
+<div class="app-shell">
 
-<div class="pg-eyebrow">⚙️ Account</div>
-<h2 class="pg-title" style="margin-bottom:24px;">Account &amp; Settings</h2>
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
 
-<div class="card" style="margin-bottom:20px;">
-  <div class="card-label">👤 Profile</div>
-  <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
-    <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold-vivid),var(--teal-vivid));display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:var(--ink);flex-shrink:0;">K</div>
-    <div>
-      <div style="font-weight:700;font-size:16px;">Kebede Alemu</div>
-      <div style="font-size:12px;color:var(--ink-30);">+251 912 345 678 · Grade 12 · Hawassa</div>
-      <div class="plan-badge plan-premium" style="margin-top:8px;width:fit-content;">👑 Premium · Renews Jul 1, 2026</div>
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div style="max-width:780px;">
+  <div class="page-eyebrow">⚙️ Account</div>
+  <h1 class="page-title" style="margin-bottom:28px;">Account &amp; Settings</h1>
+
+  <div class="card fade-up" style="margin-bottom:18px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:18px;">👤 Profile</div>
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:22px;">
+      <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--c-gold-hi),var(--c-teal-hi));display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;color:var(--c-night);flex-shrink:0;border:3px solid var(--c-gold-rim);">K</div>
+      <div>
+        <div style="font-weight:800;font-size:17px;color:var(--ink-100);">Kebede Alemu</div>
+        <div style="font-size:12px;color:var(--ink-40);">+251 912 345 678 · Grade 12 · Hawassa</div>
+        <div class="plan-badge plan-premium" style="margin-top:8px;width:fit-content;">👑 Premium · Renews Jul 1, 2026</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div class="field" style="margin-bottom:0;"><label class="label">Full Name</label><input class="input" value="Kebede Alemu"></div>
+      <div class="field" style="margin-bottom:0;"><label class="label">Phone</label><input class="input" value="+251 912 345 678" disabled style="opacity:.6;"></div>
+      <div class="field" style="margin-bottom:0;"><label class="label">Grade</label><select class="input" style="background:var(--ink-06);color:var(--ink-80);"><option selected>Grade 12</option><option>Grade 11</option><option>Grade 10</option><option>Grade 9</option></select></div>
+      <div class="field" style="margin-bottom:0;"><label class="label">Region</label><select class="input" style="background:var(--ink-06);color:var(--ink-80);"><option>Hawassa / SNNP</option><option>Addis Ababa</option><option>Oromia</option><option>Amhara</option></select></div>
+    </div>
+    <button class="btn btn-gold btn-sm" style="margin-top:18px;">Save Changes</button>
+  </div>
+
+  <div class="card fade-up delay-1" style="margin-bottom:18px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:18px;">💳 Subscription &amp; Billing</div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Current Plan</div><div style="font-size:12px;color:var(--ink-40);">Premium · ETB 500/month</div></div><a href="pricing.html" class="btn btn-ghost btn-sm">Change Plan</a></div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Next Billing</div><div style="font-size:12px;color:var(--ink-40);">July 1, 2026</div></div><button class="btn btn-ghost btn-sm">Update Payment</button></div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Payment Method</div><div style="font-size:12px;color:var(--ink-40);">Telebirr · ••• 678</div></div><button class="btn btn-ghost btn-sm">Edit</button></div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">USSD Student PIN</div><div style="font-size:12px;color:var(--ink-40);">Use with *711# for offline access</div></div><button class="btn btn-ghost btn-sm">••••• Show</button></div>
+  </div>
+
+  <div class="card fade-up delay-2" style="margin-bottom:18px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:18px;">🎛️ Preferences</div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Interface Language</div></div><select class="input" style="width:auto;padding:7px 12px;background:var(--ink-06);color:var(--ink-80);"><option>English</option><option>Amharic (አማርኛ)</option><option>Afaan Oromo</option></select></div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Daily Study Goal</div></div><select class="input" style="width:auto;padding:7px 12px;background:var(--ink-06);color:var(--ink-80);"><option>30 minutes</option><option selected>45 minutes</option><option>60 minutes</option><option>90+ minutes</option></select></div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Weekly Progress Reports</div><div style="font-size:11px;color:var(--ink-40);">Email summary every Monday</div></div><label class="toggle"><input type="checkbox" checked><span class="toggle-track"></span></label></div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Session Reminders</div><div style="font-size:11px;color:var(--ink-40);">30 min before scheduled sessions</div></div><label class="toggle"><input type="checkbox" checked><span class="toggle-track"></span></label></div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Push Notifications</div><div style="font-size:11px;color:var(--ink-40);">Streak alerts and daily nudges</div></div><label class="toggle"><input type="checkbox"><span class="toggle-track"></span></label></div>
+    <div class="setting-row"><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Sound Effects</div><div style="font-size:11px;color:var(--ink-40);">Audio feedback during practice sessions</div></div><label class="toggle"><input type="checkbox" checked><span class="toggle-track"></span></label></div>
+  </div>
+
+  <div class="card fade-up delay-3" style="border-color:rgba(244,63,94,.25);background:rgba(244,63,94,.04);margin-bottom:24px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-rose-hi);margin-bottom:14px;">⚠️ Danger Zone</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn btn-danger btn-sm" onclick="if(confirm('Reset all progress? This cannot be undone.'))alert('Progress reset.')">Reset Learning Progress</button>
+      <button class="btn btn-danger btn-sm" onclick="if(confirm('Delete account? All data will be permanently removed.'))alert('Account deleted.')">Delete Account</button>
     </div>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-    <div class="form-group" style="margin-bottom:0;"><label class="form-label">Full Name</label><input class="form-input" value="Kebede Alemu"></div>
-    <div class="form-group" style="margin-bottom:0;"><label class="form-label">Phone</label><input class="form-input" value="+251 912 345 678" disabled style="background:var(--bg-alt);"></div>
-  </div>
-  <button class="btn btn-primary btn-sm" style="margin-top:16px;">Save Changes</button>
-</div>
 
-<div class="card" style="margin-bottom:20px;">
-  <div class="card-label">💳 Subscription &amp; Billing</div>
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);"><div><div style="font-weight:600;">Current Plan</div><div style="font-size:12px;color:var(--ink-30);">Premium · ETB 500/month</div></div><a href="pricing.html" class="btn btn-ghost btn-sm">Change Plan</a></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);"><div><div style="font-weight:600;">Next Billing</div><div style="font-size:12px;color:var(--ink-30);">July 1, 2026</div></div><button class="btn btn-ghost btn-sm">Update Payment</button></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;"><div><div style="font-weight:600;">Payment Method</div><div style="font-size:12px;color:var(--ink-30);">Telebirr · ••• 678</div></div><button class="btn btn-ghost btn-sm">Edit</button></div>
-</div>
-
-<div class="card" style="margin-bottom:20px;">
-  <div class="card-label">🎛️ Preferences</div>
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);"><div style="font-weight:600;">Interface Language</div><select class="form-input" style="width:auto;padding:6px 10px;"><option>English</option><option>Amharic (አማርኛ)</option><option>Oromo</option></select></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);"><div style="font-weight:600;">Daily Study Goal</div><select class="form-input" style="width:auto;padding:6px 10px;"><option>30 minutes</option><option selected>45 minutes</option><option>60 minutes</option><option>90+ minutes</option></select></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);"><div><div style="font-weight:600;">Weekly Progress Reports</div><div style="font-size:12px;color:var(--ink-30);">Email summary every Monday</div></div><label class="toggle"><input type="checkbox" checked><span class="slider"></span></label></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);"><div><div style="font-weight:600;">Live Session Reminders</div><div style="font-size:12px;color:var(--ink-30);">30 min before sessions</div></div><label class="toggle"><input type="checkbox" checked><span class="slider"></span></label></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;"><div><div style="font-weight:600;">Push Notifications</div><div style="font-size:12px;color:var(--ink-30);">Streak alerts &amp; daily reminders</div></div><label class="toggle"><input type="checkbox"><span class="slider"></span></label></div>
-</div>
-
-<div class="card" style="border-color:var(--scarlet);background:var(--scarlet-pale);margin-bottom:20px;">
-  <div class="card-label" style="color:var(--scarlet);">⚠️ Danger Zone</div>
-  <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
-    <button class="btn btn-ghost btn-sm" style="border-color:var(--scarlet);color:var(--scarlet);width:fit-content;">Reset All Learning Progress</button>
-    <button class="btn btn-ghost btn-sm" style="border-color:var(--scarlet);color:var(--scarlet);width:fit-content;">Delete Account &amp; All Data</button>
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--s-rim);">
+    <div style="font-size:12px;color:var(--ink-40);">Finkison v3.0 · Built in Ethiopia 🇪🇹 · <a href="#" style="color:var(--c-gold-hi);">Privacy</a> · <a href="#" style="color:var(--c-gold-hi);">Terms</a> · <a href="#" style="color:var(--c-gold-hi);">Contact Support</a></div>
+    <a href="signin.html" class="btn btn-ghost btn-sm">Sign Out</a>
   </div>
 </div>
 
-<div style="padding:20px;text-align:center;border-top:1px solid var(--border);">
-  <div style="font-size:12px;color:var(--ink-30);margin-bottom:12px;">Finkison v2.2.0 · Built in Ethiopia 🇪🇹 · <a href="#" style="color:var(--gold);">Privacy</a> · <a href="#" style="color:var(--gold);">Terms</a> · <a href="#" style="color:var(--gold);">Support</a></div>
-  <a href="signin.html" class="btn btn-ghost btn-sm">Sign Out</a>
+</div></div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mm');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
+  </div>
 </div>
-</main></div></div>
 <script src="nav.js"></script>
-</body></html>
+</body>
+</html>
