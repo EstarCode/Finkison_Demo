@@ -1,132 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finkison — Plans &amp; Pricing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finkison — Plans & Pricing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
 <style>
-.pricing-card{background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-xl);padding:32px;transition:all var(--t-base);position:relative;display:flex;flex-direction:column}
-.pricing-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-6px)}
-.featured-standard{border-color:var(--standard-color);background:linear-gradient(135deg,var(--azure-pale),#fff);box-shadow:0 0 0 1px var(--standard-color),var(--shadow-lg)}
-.featured-premium{border-color:var(--premium-color);background:linear-gradient(135deg,var(--purple-pale),#fff);transform:scale(1.04);box-shadow:0 0 0 1px var(--premium-color),var(--shadow-lg)}
-.featured-premium:hover{transform:scale(1.04) translateY(-6px)}
-.popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:var(--radius-pill);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.pricing-features{text-align:left;margin:20px 0;display:flex;flex-direction:column;gap:10px;flex:1}
-.pricing-feature{font-size:13px;color:var(--ink-60);display:flex;gap:8px;align-items:flex-start}
-.checkmark{color:var(--teal-vivid);font-weight:700;flex-shrink:0}
-.times{color:var(--scarlet);font-weight:700;flex-shrink:0}
-.feature-table{width:100%;border-collapse:collapse;font-size:13px}
-.feature-table th{text-align:left;padding:12px;font-size:12px;font-weight:700;background:var(--bg-alt);border-bottom:1px solid var(--border);color:var(--ink-30)}
-.feature-table td{padding:12px;border-bottom:1px solid var(--border)}
-.feature-table td:first-child{font-weight:600;color:var(--ink)}
-@media(max-width:900px){.featured-premium{transform:none}}
+.plan-card{background:var(--s-card);border:2px solid var(--s-rim);border-radius:var(--r-2xl);padding:32px;display:flex;flex-direction:column;transition:all .35s var(--ease-out);backdrop-filter:blur(8px);position:relative;overflow:hidden}
+.plan-card:hover{transform:translateY(-8px);box-shadow:var(--sh-xl)}
+.plan-card.featured{border-color:var(--c-gold-rim);background:linear-gradient(160deg,rgba(242,183,5,.07),var(--s-card));box-shadow:var(--sh-gold)}
+.plan-card.featured-v{border-color:var(--c-violet-rim);background:linear-gradient(160deg,rgba(109,40,217,.09),var(--s-card));box-shadow:0 0 48px rgba(109,40,217,.18),var(--sh-lg);transform:scale(1.03)}
+.plan-card.featured-v:hover{transform:scale(1.03) translateY(-8px)}
+.pop-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:var(--r-full);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.plan-feat-row{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-60);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.plan-feat-row:last-child{border-bottom:none}
+.ck{color:var(--c-teal-hi);flex-shrink:0;margin-top:1px}.no{color:var(--ink-20);flex-shrink:0;margin-top:1px}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px}
+.compare-table th{padding:14px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);border-bottom:1px solid var(--s-rim);background:var(--s-card)}
+.compare-table td{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--ink-60)}
+.compare-table td:first-child{font-weight:600;color:var(--ink-80)}
+.compare-table tr:hover td{background:var(--ink-04)}
 </style>
 </head>
 <body>
-<nav class="top-nav">
-  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
-  <div class="nav-spacer"></div>
-  <a href="index.html" class="btn btn-ghost-white btn-sm">← Overview</a>
-  <a href="signin.html" class="btn btn-primary btn-sm">Sign In</a>
-</nav>
+<div class="app-shell">
 
-<div style="padding:48px 32px;max-width:1200px;margin:0 auto;">
-  <div style="text-align:center;margin-bottom:48px;">
-    <div class="pg-eyebrow" style="display:inline-flex;margin-bottom:10px;">Transparent Pricing</div>
-    <h2 style="font-size:34px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px;">Start Free. Upgrade Anytime.</h2>
-    <p style="color:var(--ink-30);font-size:15px;max-width:520px;margin:0 auto;">No credit card for the free plan. Cancel anytime. All prices in Ethiopian Birr.</p>
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
+
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div style="text-align:center;margin-bottom:56px;">
+  <div class="page-eyebrow">💰 Transparent Pricing</div>
+  <h1 class="page-title" style="font-size:40px;max-width:600px;margin:0 auto 12px;">Start Free.<br>Upgrade When You're Ready.</h1>
+  <p class="page-sub" style="margin:0 auto;font-size:15px;">No credit card for the free plan. Cancel anytime. All prices in Ethiopian Birr.</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;">
+    <span style="font-size:13px;color:var(--ink-40);">Monthly</span>
+    <label class="toggle"><input type="checkbox" id="billing-toggle"><span class="toggle-track"></span></label>
+    <span style="font-size:13px;color:var(--ink-80);font-weight:600;">Yearly <span class="badge badge-teal" style="font-size:10px;">Save 17%</span></span>
   </div>
+</div>
 
-  <div class="g3" style="max-width:1060px;margin:0 auto 56px;align-items:start;">
-    <!-- FREE -->
-    <div class="pricing-card">
-      <span style="font-size:20px;font-weight:800;color:var(--free-color);margin-bottom:6px;">Starter</span>
-      <p style="font-size:12px;color:var(--ink-30);margin-bottom:20px;">Explore and learn at no cost</p>
-      <div style="font-size:46px;font-weight:800;color:var(--free-color);font-family:var(--font-mono);margin-bottom:4px;">ETB 0</div>
-      <p style="font-size:12px;color:var(--ink-30);">Forever free · no card needed</p>
-      <a href="signin.html" class="btn btn-navy btn-block btn-lg" style="margin:20px 0;">Get Started Free</a>
-      <div class="pricing-features">
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>15 questions/day</strong> across all subjects</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span>Basic accuracy &amp; progress tracking</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span>School leaderboard access</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span>Offline USSD access</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span>Bilingual UI (EN / አማ / Oromo)</span></div>
-        <div class="pricing-feature"><span class="times">✗</span><span style="color:var(--border-dark);">AI adaptive engine</span></div>
-        <div class="pricing-feature"><span class="times">✗</span><span style="color:var(--border-dark);">Score prediction &amp; heatmaps</span></div>
-        <div class="pricing-feature"><span class="times">✗</span><span style="color:var(--border-dark);">AI Study Planner &amp; Video Library</span></div>
-        <div class="pricing-feature"><span class="times">✗</span><span style="color:var(--border-dark);">AI Tutor &amp; Parent Portal</span></div>
-      </div>
-    </div>
-    <!-- STANDARD -->
-    <div class="pricing-card featured-standard">
-      <div class="popular-badge" style="background:var(--standard-color);color:#fff;">MOST POPULAR</div>
-      <span style="font-size:20px;font-weight:800;color:var(--standard-color);margin-bottom:6px;">Standard</span>
-      <p style="font-size:12px;color:var(--ink-30);margin-bottom:20px;">All tools to excel in your exams</p>
-      <div style="font-size:46px;font-weight:800;color:var(--standard-color);font-family:var(--font-mono);margin-bottom:4px;">ETB 200</div>
-      <p style="font-size:12px;color:var(--ink-30);">/month · ETB 1,990/year (save 17%)</p>
-      <a href="signin.html" class="btn btn-azure btn-block btn-lg" style="margin:20px 0;">Start 7-Day Free Trial</a>
-      <p style="font-size:11px;color:var(--ink-30);text-align:center;margin-top:-12px;margin-bottom:8px;">No charge for 7 days · cancel anytime</p>
-      <div class="pricing-features">
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>Unlimited questions</strong></span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>AI Adaptive Paths</strong> <span class="ai-chip">AI</span></span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span>Performance Insights — heatmaps &amp; weak spots</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>Score Predictor</strong> <span class="ai-chip">AI</span> — ±5pt accuracy</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>AI Study Planner</strong> <span class="ai-chip">AI</span></span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>Video Library</strong> — 500+ curated videos</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span>National Leaderboard access</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span>Weekly progress reports</span></div>
-        <div class="pricing-feature"><span class="times">✗</span><span style="color:var(--border-dark);">AI Tutor chat</span></div>
-        <div class="pricing-feature"><span class="times">✗</span><span style="color:var(--border-dark);">Parent Portal &amp; live sessions</span></div>
-      </div>
-    </div>
-    <!-- PREMIUM -->
-    <div class="pricing-card featured-premium">
-      <div class="popular-badge" style="background:var(--premium-color);color:#fff;">BEST RESULTS</div>
-      <span style="font-size:20px;font-weight:800;color:var(--premium-color);margin-bottom:6px;">Premium</span>
-      <p style="font-size:12px;color:var(--ink-30);margin-bottom:20px;">Full AI power for serious prep</p>
-      <div style="font-size:46px;font-weight:800;color:var(--premium-color);font-family:var(--font-mono);margin-bottom:4px;">ETB 500</div>
-      <p style="font-size:12px;color:var(--ink-30);">/month · ETB 4,990/year (save 17%)</p>
-      <a href="signin.html" class="btn btn-purple btn-block btn-lg" style="margin:20px 0;">Start 7-Day Free Trial</a>
-      <p style="font-size:11px;color:var(--ink-30);text-align:center;margin-top:-12px;margin-bottom:8px;">No charge for 7 days · cancel anytime</p>
-      <div class="pricing-features">
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>Everything in Standard</strong></span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>AI Tutor</strong> <span class="ai-chip">AI</span> — instant Q&amp;A explanations</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>Live Tutor Sessions</strong> — 1-on-1 booking</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>Parent Portal</strong> — multi-child monitoring</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span>School Admin Dashboard</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>Learning Community</strong> — study groups</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span>Priority support — 24h response</span></div>
-        <div class="pricing-feature"><span class="checkmark">✓</span><span><strong>Full Exam Simulation</strong> — timed mock exams</span></div>
-      </div>
+<div class="g3" style="max-width:1080px;margin:0 auto 64px;align-items:start;">
+  <div class="plan-card">
+    <div style="font-size:20px;font-weight:700;color:var(--c-teal-hi);margin-bottom:6px;">Starter</div>
+    <p style="font-size:12px;color:var(--ink-40);margin-bottom:22px;">For exploring the platform</p>
+    <div style="font-family:var(--font-display);font-size:52px;font-weight:900;color:var(--ink-100);line-height:1;margin-bottom:4px;">ETB 0</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-bottom:24px;">Forever free · no card needed</div>
+    <a href="getting-started.html" class="btn btn-ghost btn-block btn-lg">Get Started Free</a>
+    <div style="margin-top:24px;display:flex;flex-direction:column;">
+      <div class="plan-feat-row"><span class="ck">✓</span> 15 questions per day</div>
+      <div class="plan-feat-row"><span class="ck">✓</span> Basic accuracy tracking</div>
+      <div class="plan-feat-row"><span class="ck">✓</span> School leaderboard</div>
+      <div class="plan-feat-row"><span class="ck">✓</span> Offline USSD access</div>
+      <div class="plan-feat-row"><span class="ck">✓</span> Bilingual UI (EN/አማ/Oromo)</div>
+      <div class="plan-feat-row"><span class="no">—</span><span style="color:var(--ink-30);">AI adaptive engine</span></div>
+      <div class="plan-feat-row"><span class="no">—</span><span style="color:var(--ink-30);">Score prediction</span></div>
+      <div class="plan-feat-row"><span class="no">—</span><span style="color:var(--ink-30);">AI Tutor</span></div>
     </div>
   </div>
 
-  <!-- Comparison table -->
-  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:32px;overflow-x:auto;margin-bottom:32px;">
-    <h3 style="font-size:18px;font-weight:800;margin-bottom:20px;">Full Feature Comparison</h3>
-    <table class="feature-table">
-      <thead><tr><th>Feature</th><th>Starter (Free)</th><th>Standard (ETB 200)</th><th>Premium (ETB 500)</th></tr></thead>
-      <tbody>
-        <tr><td>Questions / day</td><td>15 max</td><td style="color:var(--teal-vivid);font-weight:700;">Unlimited</td><td style="color:var(--teal-vivid);font-weight:700;">Unlimited</td></tr>
-        <tr><td>AI Adaptive Engine</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--teal-vivid);">✓ Full</td><td style="color:var(--teal-vivid);">✓ Full</td></tr>
-        <tr><td>Score Prediction (±5pt)</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--teal-vivid);">✓</td><td style="color:var(--teal-vivid);">✓</td></tr>
-        <tr><td>AI Study Planner</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--teal-vivid);">✓</td><td style="color:var(--teal-vivid);">✓</td></tr>
-        <tr><td>Video Library</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--teal-vivid);">✓ 500+ videos</td><td style="color:var(--teal-vivid);">✓ 500+ videos</td></tr>
-        <tr><td>AI Tutor Chat</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--teal-vivid);">✓ GPT-powered</td></tr>
-        <tr><td>Live Tutor Sessions</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--teal-vivid);">✓ 1-on-1</td></tr>
-        <tr><td>Parent Portal</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--teal-vivid);">✓ Multi-child</td></tr>
-        <tr><td>Exam Simulation</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--scarlet);">✗</td><td style="color:var(--teal-vivid);">✓ Full mock exams</td></tr>
-        <tr><td>Leaderboard</td><td>School only</td><td style="color:var(--teal-vivid);">✓ National</td><td style="color:var(--teal-vivid);">✓ National</td></tr>
-        <tr><td>Offline USSD</td><td style="color:var(--teal-vivid);">✓</td><td style="color:var(--teal-vivid);">✓</td><td style="color:var(--teal-vivid);">✓</td></tr>
-        <tr><td>Support</td><td>Email</td><td>Email</td><td style="color:var(--teal-vivid);">Priority 24h</td></tr>
-      </tbody>
-    </table>
+  <div class="plan-card featured">
+    <div class="pop-tag" style="background:linear-gradient(135deg,var(--c-gold-hi),var(--c-gold));color:var(--c-night);">MOST POPULAR</div>
+    <div style="font-size:20px;font-weight:700;color:var(--c-gold-hi);margin-bottom:6px;">Standard</div>
+    <p style="font-size:12px;color:var(--ink-40);margin-bottom:22px;">Everything you need to excel</p>
+    <div style="font-family:var(--font-display);font-size:52px;font-weight:900;color:var(--c-gold-hi);line-height:1;margin-bottom:4px;" id="std-price">ETB 200</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-bottom:24px;">/month · <span id="std-year" style="color:var(--c-gold-hi);">ETB 1,990/year</span> — save 17%</div>
+    <a href="getting-started.html" class="btn btn-gold btn-block btn-lg">Start 7-Day Free Trial</a>
+    <p style="font-size:11px;color:var(--ink-40);text-align:center;margin-top:8px;">No charge for 7 days · cancel anytime</p>
+    <div style="margin-top:20px;display:flex;flex-direction:column;">
+      <div class="plan-feat-row"><span class="ck">✓</span><strong>Unlimited questions</strong></div>
+      <div class="plan-feat-row"><span class="ck">✓</span>AI Adaptive Learning Engine</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Score Predictor ±5pt accuracy</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Performance Insights + heatmaps</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>AI Study Planner (auto-schedule)</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Video Library — 500+ videos</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>National Leaderboard</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Weekly progress PDF reports</div>
+      <div class="plan-feat-row"><span class="no">—</span><span style="color:var(--ink-30);">AI Tutor Chat</span></div>
+      <div class="plan-feat-row"><span class="no">—</span><span style="color:var(--ink-30);">Parent Portal</span></div>
+    </div>
   </div>
-  <div style="background:var(--azure-pale);border-radius:var(--radius-lg);padding:22px;text-align:center;">
-    <div style="font-size:14px;color:var(--azure);font-weight:700;margin-bottom:8px;">💳 Accepted Payment Methods</div>
-    <div style="font-size:13px;color:var(--ink-60);">Telebirr · M-Pesa · Bank Transfer · PayPal · Stripe</div>
+
+  <div class="plan-card featured-v">
+    <div class="pop-tag" style="background:linear-gradient(135deg,var(--c-violet-hi),var(--c-violet));color:#fff;">BEST RESULTS</div>
+    <div style="font-size:20px;font-weight:700;color:var(--c-violet-hi);margin-bottom:6px;">Premium</div>
+    <p style="font-size:12px;color:var(--ink-40);margin-bottom:22px;">Complete AI mastery suite</p>
+    <div style="font-family:var(--font-display);font-size:52px;font-weight:900;color:var(--c-violet-hi);line-height:1;margin-bottom:4px;" id="pre-price">ETB 500</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-bottom:24px;">/month · <span id="pre-year" style="color:var(--c-violet-hi);">ETB 4,990/year</span> — save 17%</div>
+    <a href="getting-started.html" class="btn btn-violet btn-block btn-lg">Start 7-Day Free Trial</a>
+    <p style="font-size:11px;color:var(--ink-40);text-align:center;margin-top:8px;">No charge for 7 days · cancel anytime</p>
+    <div style="margin-top:20px;display:flex;flex-direction:column;">
+      <div class="plan-feat-row"><span class="ck">✓</span><strong>Everything in Standard</strong></div>
+      <div class="plan-feat-row"><span class="ck">✓</span>AI Tutor — 24/7 chat explanations</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Full Exam Simulation (timed)</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Live Tutor Session booking</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Parent Portal — multi-child view</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>School Admin Dashboard</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Learning Community + groups</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Downloadable Certificates</div>
+      <div class="plan-feat-row"><span class="ck">✓</span>Priority support (24h response)</div>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:1080px;margin:0 auto 32px;background:var(--s-card);border:1px solid var(--s-rim);border-radius:var(--r-2xl);padding:32px;overflow-x:auto;">
+  <div style="font-size:18px;font-weight:700;color:var(--ink-100);margin-bottom:22px;">Full Feature Comparison</div>
+  <table class="compare-table">
+    <thead><tr><th style="width:38%;">Feature</th><th>Starter</th><th>Standard</th><th>Premium</th></tr></thead>
+    <tbody>
+      <tr><td>Questions per day</td><td>15 max</td><td style="color:var(--c-teal-hi);font-weight:700;">Unlimited</td><td style="color:var(--c-teal-hi);font-weight:700;">Unlimited</td></tr>
+      <tr><td>AI Adaptive Engine</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓ Full</td><td style="color:var(--c-teal-hi);">✓ Full</td></tr>
+      <tr><td>Score Prediction (±5pt)</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓</td><td style="color:var(--c-teal-hi);">✓</td></tr>
+      <tr><td>Performance Heatmaps</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓</td><td style="color:var(--c-teal-hi);">✓</td></tr>
+      <tr><td>AI Study Planner</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓</td><td style="color:var(--c-teal-hi);">✓</td></tr>
+      <tr><td>Video Library (500+)</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓</td><td style="color:var(--c-teal-hi);">✓</td></tr>
+      <tr><td>AI Tutor Chat</td><td style="color:var(--ink-30);">—</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓ GPT-powered</td></tr>
+      <tr><td>Exam Simulation</td><td style="color:var(--ink-30);">—</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓ Full timed</td></tr>
+      <tr><td>Parent Portal</td><td style="color:var(--ink-30);">—</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓ Multi-child</td></tr>
+      <tr><td>School Admin</td><td style="color:var(--ink-30);">—</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓</td></tr>
+      <tr><td>Certificates</td><td style="color:var(--ink-30);">—</td><td style="color:var(--ink-30);">—</td><td style="color:var(--c-teal-hi);">✓ Downloadable</td></tr>
+      <tr><td>Offline USSD</td><td style="color:var(--c-teal-hi);">✓</td><td style="color:var(--c-teal-hi);">✓</td><td style="color:var(--c-teal-hi);">✓</td></tr>
+      <tr><td>Leaderboard</td><td>School only</td><td style="color:var(--c-teal-hi);">✓ National</td><td style="color:var(--c-teal-hi);">✓ National</td></tr>
+      <tr><td>Support</td><td>Email</td><td>Email</td><td style="color:var(--c-gold-hi);">Priority 24h</td></tr>
+    </tbody>
+  </table>
+</div>
+<div style="max-width:1080px;margin:0 auto;background:var(--c-azure-bg);border:1px solid var(--c-azure-rim);border-radius:var(--r-xl);padding:22px;text-align:center;">
+  <div style="font-size:14px;color:var(--c-azure-hi);font-weight:700;margin-bottom:8px;">💳 Accepted Payment Methods</div>
+  <div style="font-size:13px;color:var(--ink-60);">Telebirr · M-Pesa · Commercial Bank of Ethiopia · PayPal · Stripe · Amole</div>
+  <div style="font-size:12px;color:var(--ink-40);margin-top:8px;">All plans auto-renew. Cancel any time from Account Settings with instant effect.</div>
+</div>
+<script>
+document.getElementById('billing-toggle').addEventListener('change',function(){
+  const y=this.checked;
+  document.getElementById('std-price').textContent=y?'ETB 166':'ETB 200';
+  document.getElementById('pre-price').textContent=y?'ETB 416':'ETB 500';
+});
+</script>
+
+
+</div>
+</div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mobile-menu-btn');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
   </div>
 </div>
 <script src="nav.js"></script>
