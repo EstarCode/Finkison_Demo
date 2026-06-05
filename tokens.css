@@ -1,0 +1,103 @@
+/* ════════════════════════════════════════════
+   FINKISON DESIGN SYSTEM — tokens.css
+   Ethiopian-tech luxury · Midnight × Gold
+════════════════════════════════════════════ */
+
+:root {
+  /* ── Brand Colors ── */
+  --c-night:   #050D1A;
+  --c-deep:    #0B1628;
+  --c-navy:    #0F2040;
+  --c-slate:   #1A2D4A;
+  --c-steel:   #243B5E;
+  --c-mist:    #2E4A72;
+
+  --c-gold:    #C8960C;
+  --c-gold-hi: #F2B705;
+  --c-gold-lo: #7A5B08;
+  --c-gold-bg: rgba(242,183,5,.08);
+  --c-gold-rim:rgba(242,183,5,.18);
+
+  --c-teal:    #0A7C5C;
+  --c-teal-hi: #0DB37F;
+  --c-teal-bg: rgba(13,179,127,.08);
+  --c-teal-rim:rgba(13,179,127,.18);
+
+  --c-azure:   #0E5FD8;
+  --c-azure-hi:#3B82F6;
+  --c-azure-bg:rgba(59,130,246,.08);
+  --c-azure-rim:rgba(59,130,246,.18);
+
+  --c-violet:  #6D28D9;
+  --c-violet-hi:#8B5CF6;
+  --c-violet-bg:rgba(109,40,217,.08);
+  --c-violet-rim:rgba(109,40,217,.2);
+
+  --c-rose:    #BE123C;
+  --c-rose-hi: #F43F5E;
+  --c-rose-bg: rgba(244,63,94,.08);
+
+  --c-amber:   #B45309;
+  --c-amber-hi:#F59E0B;
+  --c-amber-bg:rgba(245,158,11,.08);
+
+  /* ── Ink Scale (light text on dark) ── */
+  --ink-100: #FFFFFF;
+  --ink-80:  rgba(255,255,255,.82);
+  --ink-60:  rgba(255,255,255,.60);
+  --ink-40:  rgba(255,255,255,.40);
+  --ink-20:  rgba(255,255,255,.20);
+  --ink-10:  rgba(255,255,255,.10);
+  --ink-06:  rgba(255,255,255,.06);
+  --ink-04:  rgba(255,255,255,.04);
+
+  /* ── Surfaces ── */
+  --s-glass:  rgba(15,32,64,.72);
+  --s-card:   rgba(26,45,74,.60);
+  --s-card-hi:rgba(36,59,94,.80);
+  --s-modal:  rgba(11,22,40,.95);
+  --s-rim:    rgba(255,255,255,.08);
+  --s-rim-hi: rgba(255,255,255,.14);
+
+  /* ── Typography ── */
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+  --font-eth:     'Noto Serif Ethiopic', serif;
+
+  /* ── Spacing ── */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 20px;  --space-6: 24px;  --space-8: 32px;  --space-10: 40px;
+  --space-12: 48px; --space-16: 64px; --space-20: 80px;
+
+  /* ── Radius ── */
+  --r-xs: 4px; --r-sm: 8px; --r-md: 12px; --r-lg: 16px;
+  --r-xl: 20px; --r-2xl: 28px; --r-full: 9999px;
+
+  /* ── Shadows ── */
+  --sh-sm:  0 1px 3px rgba(0,0,0,.3), 0 1px 2px rgba(0,0,0,.2);
+  --sh-md:  0 4px 16px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.25);
+  --sh-lg:  0 12px 40px rgba(0,0,0,.45), 0 4px 12px rgba(0,0,0,.3);
+  --sh-xl:  0 24px 64px rgba(0,0,0,.55), 0 8px 20px rgba(0,0,0,.35);
+  --sh-gold: 0 0 32px rgba(242,183,5,.2), 0 4px 16px rgba(242,183,5,.12);
+  --sh-teal: 0 0 32px rgba(13,179,127,.2), 0 4px 16px rgba(13,179,127,.12);
+
+  /* ── Motion ── */
+  --ease-out:   cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --ease-smooth:cubic-bezier(.4,0,.2,1);
+  --dur-fast:   120ms;
+  --dur-base:   220ms;
+  --dur-slow:   380ms;
+  --dur-enter:  540ms;
+
+  /* ── Layout ── */
+  --nav-h: 68px;
+  --sidebar-w: 244px;
+  --max-content: 1360px;
+
+  /* ── Plan accent colors ── */
+  --plan-free:     var(--c-teal-hi);
+  --plan-standard: var(--c-azure-hi);
+  --plan-premium:  var(--c-gold-hi);
+}
