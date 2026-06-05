@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finkison — Exam Simulation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
+<style>
+.exam-timer-ring{width:80px;height:80px;border-radius:50%;background:conic-gradient(var(--c-gold-hi) 0%,var(--ink-10) 0%);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.q-nav-btn{width:36px;height:36px;border-radius:var(--r-sm);font-size:12px;font-weight:700;border:1.5px solid var(--s-rim-hi);background:var(--ink-06);color:var(--ink-40);cursor:pointer;transition:all var(--dur-fast);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);}
+.q-nav-btn:hover{border-color:var(--c-gold-hi);color:var(--c-gold-hi);}
+.q-nav-btn.done{background:var(--c-teal-bg);border-color:var(--c-teal-hi);color:var(--c-teal-hi);}
+.q-nav-btn.active{background:var(--c-gold-bg);border-color:var(--c-gold-hi);color:var(--c-gold-hi);}
+.q-nav-btn.flagged{background:var(--c-rose-bg);border-color:var(--c-rose-hi);color:var(--c-rose-hi);}
+</style>
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
+
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div style="display:grid;grid-template-columns:1fr 280px;gap:24px;align-items:start;">
+  <div>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:24px;">
+      <div>
+        <div class="page-eyebrow">📝 Mock Exam</div>
+        <h1 class="page-title" style="margin-bottom:0;">2025 National University Entrance</h1>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--c-gold-hi);" id="exam-time">02:47:12</div>
+          <div style="font-size:10px;color:var(--ink-40);text-transform:uppercase;letter-spacing:.06em;">Remaining</div>
+        </div>
+        <button class="btn btn-danger btn-sm" onclick="if(confirm('Submit exam? You cannot return.'))alert('Exam submitted! Calculating results…')">Submit Exam</button>
+      </div>
+    </div>
+
+    <div style="height:5px;background:var(--ink-10);border-radius:999px;margin-bottom:24px;overflow:hidden;">
+      <div style="height:100%;width:12%;background:linear-gradient(90deg,var(--c-gold-hi),var(--c-gold));border-radius:999px;"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px;">
+      <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap;">
+        <span class="badge badge-azure">Section 1 — Mathematics</span>
+        <span class="badge badge-dim">Question 6 of 50</span>
+        <span class="badge badge-dim">2 marks</span>
+      </div>
+      <p style="font-size:15px;font-weight:600;color:var(--ink-100);line-height:1.65;margin-bottom:22px;">
+        A student invests ETB 5,000 in an account earning compound interest at 8% per year. What is the amount after 3 years, to the nearest Birr?
+      </p>
+      <div id="exam-opts">
+        <div class="opt" onclick="examSel(this)" style="display:flex;align-items:center;gap:14px;padding:13px 16px;border:1.5px solid var(--s-rim-hi);border-radius:var(--r-lg);cursor:pointer;transition:all var(--dur-fast);margin-bottom:10px;background:var(--ink-06);">
+          <div style="width:34px;height:34px;border-radius:50%;background:var(--ink-10);border:1.5px solid var(--s-rim-hi);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;font-family:var(--font-mono);">A</div>
+          <span>ETB 6,120</span>
+        </div>
+        <div class="opt" onclick="examSel(this)" style="display:flex;align-items:center;gap:14px;padding:13px 16px;border:1.5px solid var(--s-rim-hi);border-radius:var(--r-lg);cursor:pointer;transition:all var(--dur-fast);margin-bottom:10px;background:var(--ink-06);">
+          <div style="width:34px;height:34px;border-radius:50%;background:var(--ink-10);border:1.5px solid var(--s-rim-hi);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;font-family:var(--font-mono);">B</div>
+          <span>ETB 6,299</span>
+        </div>
+        <div class="opt" onclick="examSel(this)" style="display:flex;align-items:center;gap:14px;padding:13px 16px;border:1.5px solid var(--s-rim-hi);border-radius:var(--r-lg);cursor:pointer;transition:all var(--dur-fast);margin-bottom:10px;background:var(--ink-06);">
+          <div style="width:34px;height:34px;border-radius:50%;background:var(--ink-10);border:1.5px solid var(--s-rim-hi);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;font-family:var(--font-mono);">C</div>
+          <span>ETB 6,349</span>
+        </div>
+        <div class="opt" onclick="examSel(this)" style="display:flex;align-items:center;gap:14px;padding:13px 16px;border:1.5px solid var(--s-rim-hi);border-radius:var(--r-lg);cursor:pointer;transition:all var(--dur-fast);margin-bottom:10px;background:var(--ink-06);">
+          <div style="width:34px;height:34px;border-radius:50%;background:var(--ink-10);border:1.5px solid var(--s-rim-hi);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;font-family:var(--font-mono);">D</div>
+          <span>ETB 6,402</span>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:16px;">
+        <button class="btn btn-ghost btn-sm">🚩 Flag &amp; Review Later</button>
+        <div style="display:flex;gap:8px;"><button class="btn btn-ghost btn-sm">← Prev</button><button class="btn btn-gold">Next Question →</button></div>
+      </div>
+    </div>
+
+    <div style="padding:14px 16px;background:var(--c-rose-bg);border:1px solid rgba(244,63,94,.2);border-radius:var(--r-lg);font-size:13px;color:var(--c-rose-hi);">
+      ⚠️ Exam Mode: No AI hints or explanations during the exam. Results and full review available after submission.
+    </div>
+  </div>
+
+  <!-- Right: question navigator -->
+  <div style="display:flex;flex-direction:column;gap:14px;position:sticky;top:20px;">
+    <div class="card">
+      <div style="font-size:11px;font-weight:700;color:var(--ink-40);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;">Question Navigator</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;">
+        <button class="q-nav-btn done">1</button><button class="q-nav-btn done">2</button><button class="q-nav-btn done">3</button><button class="q-nav-btn done">4</button><button class="q-nav-btn flagged">5</button>
+        <button class="q-nav-btn active">6</button><button class="q-nav-btn">7</button><button class="q-nav-btn">8</button><button class="q-nav-btn">9</button><button class="q-nav-btn">10</button>
+        <button class="q-nav-btn">11</button><button class="q-nav-btn">12</button><button class="q-nav-btn">13</button><button class="q-nav-btn">14</button><button class="q-nav-btn">15</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--ink-40);">
+        <span style="display:flex;align-items:center;gap:7px;"><span style="width:12px;height:12px;border-radius:2px;background:var(--c-teal-bg);border:1px solid var(--c-teal-hi);display:inline-block;"></span>Answered (4)</span>
+        <span style="display:flex;align-items:center;gap:7px;"><span style="width:12px;height:12px;border-radius:2px;background:var(--c-gold-bg);border:1px solid var(--c-gold-hi);display:inline-block;"></span>Current</span>
+        <span style="display:flex;align-items:center;gap:7px;"><span style="width:12px;height:12px;border-radius:2px;background:var(--c-rose-bg);border:1px solid var(--c-rose-hi);display:inline-block;"></span>Flagged (1)</span>
+        <span style="display:flex;align-items:center;gap:7px;"><span style="width:12px;height:12px;border-radius:2px;background:var(--ink-10);border:1px solid var(--s-rim-hi);display:inline-block;"></span>Not visited (44)</span>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:11px;font-weight:700;color:var(--ink-40);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">Sections</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+        <div style="display:flex;justify-content:space-between;"><span style="color:var(--c-gold-hi);font-weight:600;">Mathematics</span><span class="badge badge-azure">Qs 1–50</span></div>
+        <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-60);">Physics</span><span class="badge badge-dim">Qs 51–100</span></div>
+        <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-60);">Chemistry</span><span class="badge badge-dim">Qs 101–150</span></div>
+        <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-60);">English</span><span class="badge badge-dim">Qs 151–200</span></div>
+        <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-60);">Biology</span><span class="badge badge-dim">Qs 201–250</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+let s=9960;const t=document.getElementById('exam-time');
+setInterval(()=>{s=Math.max(0,s-1);const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;t.textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;if(s<300)t.style.color='var(--c-rose-hi)';},1000);
+function examSel(el){document.querySelectorAll('#exam-opts > div').forEach(o=>{o.style.borderColor='var(--s-rim-hi)';o.style.background='var(--ink-06)';o.querySelector('div').style.background='var(--ink-10)';o.querySelector('div').style.borderColor='var(--s-rim-hi)';o.querySelector('div').style.color='';});el.style.borderColor='var(--c-azure-hi)';el.style.background='var(--c-azure-bg)';el.querySelector('div').style.background='var(--c-azure-hi)';el.querySelector('div').style.borderColor='var(--c-azure-hi)';el.querySelector('div').style.color='#fff';}
+</script>
+
+
+</div></div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mobile-menu-btn');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
+  </div>
+</div>
+<script src="nav.js"></script>
+</body>
+</html>
