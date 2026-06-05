@@ -1,58 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finkison — Parent Portal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="shared.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
+
 </head>
 <body>
-<div class="app">
-<nav class="top-nav">
-  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
-  <div class="nav-spacer"></div>
-  <div class="plan-badge plan-premium">👑 Premium Active</div>
-  <a href="notifications.html" class="nav-icon-btn"><div class="notif-dot"></div>🔔</a>
-  <a href="account-settings.html" class="btn btn-ghost-white btn-sm">⚙️</a>
-</nav>
-<div class="app-body">
-<nav class="side-nav" id="sidebar"></nav>
-<main class="main">
+<div class="app-shell">
 
-<div class="pg-eyebrow">👨‍👩‍👧 Premium Feature</div>
-<h2 class="pg-title">Parent Portal</h2>
-<p class="pg-sub">Monitor all your children's learning progress, time spent, and exam readiness in one view.</p>
-<div style="display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;align-items:center;">
-  <div style="padding:14px 20px;background:var(--surface);border:2px solid var(--gold);border-radius:var(--radius-lg);cursor:pointer;box-shadow:var(--shadow-sm);"><div style="font-weight:700;">Kebede (Gr. 12)</div><div style="font-size:11px;color:var(--ink-30);">Primary account</div></div>
-  <div style="padding:14px 20px;background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-lg);cursor:pointer;box-shadow:var(--shadow-sm);"><div style="font-weight:700;">Sara (Gr. 10)</div><div style="font-size:11px;color:var(--ink-30);">Secondary</div></div>
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
+
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div class="flex items-center justify-between flex-wrap gap-2" style="margin-bottom:24px;">
+  <div>
+    <div class="page-eyebrow">👨‍👩‍👧 Premium Feature</div>
+    <h1 class="page-title">Parent Portal</h1>
+    <p class="page-sub">Monitor all your children's exam readiness, time spent, and progress — in one view.</p>
+  </div>
   <button class="btn btn-ghost btn-sm">+ Add Child</button>
 </div>
-<div class="g4">
-  <div class="stat-card" style="--bar-color:var(--azure-vivid);--stat-color:var(--azure)"><div class="stat-label"><span class="ai-chip">AI</span> Score Prediction</div><div class="stat-accent">385</div><div class="stat-delta delta-up">↑ +14 this week</div></div>
-  <div class="stat-card" style="--bar-color:var(--gold-vivid);--stat-color:var(--gold)"><div class="stat-label">Study Streak</div><div class="stat-accent">🔥 8 days</div><div class="stat-delta delta-up">Personal best</div></div>
-  <div class="stat-card" style="--bar-color:var(--teal-vivid);--stat-color:var(--teal)"><div class="stat-label">Hours This Week</div><div class="stat-accent">6.5h</div><div class="stat-delta delta-neutral">Goal: 7h</div></div>
-  <div class="stat-card" style="--bar-color:var(--premium-color);--stat-color:var(--premium-color)"><div class="stat-label">Session Completion</div><div class="stat-accent">78%</div><div class="stat-delta delta-up">↑ +5% this month</div></div>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:24px;">
+  <button class="btn btn-gold btn-sm" style="border:2px solid var(--c-gold-hi);">👦 Kebede (Gr. 12)</button>
+  <button class="btn btn-ghost btn-sm">👧 Sara (Gr. 10)</button>
+  <span class="badge badge-dim">2 children monitored</span>
 </div>
-<div class="g2 mt-lg">
+
+<div class="g4 fade-up delay-1" style="margin-bottom:24px;">
+  <div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,var(--c-gold-hi),var(--c-gold));"></div><div class="stat-lbl">AI Score Prediction</div><div class="stat-val" style="color:var(--c-gold-hi);">423</div><div class="stat-delta delta-up">↑ +38 since Jan</div></div>
+  <div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,#F59E0B,#B45309);"></div><div class="stat-lbl">Study Streak</div><div class="stat-val">🔥 8 days</div><div class="stat-delta delta-up">Personal best</div></div>
+  <div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,var(--c-teal-hi),var(--c-teal));"></div><div class="stat-lbl">Hours This Week</div><div class="stat-val">6.5h</div><div class="stat-delta delta-flat">Goal: 7h</div></div>
+  <div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,var(--c-violet-hi),var(--c-violet));"></div><div class="stat-lbl">Session Completion</div><div class="stat-val">78%</div><div class="stat-delta delta-up">↑ +5% this month</div></div>
+</div>
+
+<div class="g2 fade-up delay-2">
   <div class="card">
-    <div class="card-label">📐 Subject Progress</div>
-    <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px;">
-      <div><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px;"><span>Mathematics</span><span class="badge badge-azure">78%</span></div><div class="progress-track"><div class="progress-fill" style="width:78%;--fill-from:var(--azure-vivid);--fill-to:var(--azure)"></div></div></div>
-      <div><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px;"><span>Physics</span><span class="badge badge-gold">69%</span></div><div class="progress-track"><div class="progress-fill" style="width:69%;--fill-from:#F59E0B;--fill-to:#B45309"></div></div></div>
-      <div><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px;"><span>Chemistry</span><span class="badge badge-teal">83%</span></div><div class="progress-track"><div class="progress-fill" style="width:83%;--fill-from:var(--teal-vivid);--fill-to:var(--teal)"></div></div></div>
-      <div><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px;"><span>English</span><span class="badge badge-azure">71%</span></div><div class="progress-track"><div class="progress-fill" style="width:71%;--fill-from:var(--azure-vivid);--fill-to:var(--azure)"></div></div></div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:18px;">📐 Subject Progress</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-weight:600;font-size:13px;color:var(--ink-100);">Mathematics</span><span class="badge badge-azure">78%</span></div><div class="progress-track"><div class="progress-fill" style="width:78%;--fill-a:var(--c-azure-hi);--fill-b:var(--c-azure);"></div></div></div>
+      <div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-weight:600;font-size:13px;color:var(--ink-100);">Physics</span><span class="badge badge-rose">69%</span></div><div class="progress-track"><div class="progress-fill" style="width:69%;--fill-a:#F59E0B;--fill-b:#B45309;"></div></div></div>
+      <div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-weight:600;font-size:13px;color:var(--ink-100);">Chemistry</span><span class="badge badge-teal">83%</span></div><div class="progress-track"><div class="progress-fill" style="width:83%;--fill-a:var(--c-teal-hi);--fill-b:var(--c-teal);"></div></div></div>
+      <div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-weight:600;font-size:13px;color:var(--ink-100);">English</span><span class="badge badge-azure">71%</span></div><div class="progress-track"><div class="progress-fill" style="width:71%;--fill-a:var(--c-azure-hi);--fill-b:var(--c-azure);"></div></div></div>
     </div>
+    <div class="divider"></div>
+    <button class="btn btn-ghost btn-sm btn-block">📥 Download Full Progress Report (PDF)</button>
   </div>
   <div class="card">
-    <div class="card-label">📋 Recent Activity</div>
-    <div style="display:flex;flex-direction:column;gap:10px;margin-top:10px;">
-      <div style="display:flex;gap:10px;padding:10px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><span style="font-size:16px;">✅</span><div><div style="font-weight:600;font-size:13px;">Completed Physics session</div><div style="font-size:11px;color:var(--ink-30);">Today · 8:45 AM · 15 Qs · 73% accuracy</div></div></div>
-      <div style="display:flex;gap:10px;padding:10px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><span style="font-size:16px;">🏆</span><div><div style="font-weight:600;font-size:13px;">Reached rank #47 nationally</div><div style="font-size:11px;color:var(--ink-30);">Yesterday · National Leaderboard</div></div></div>
-      <div style="display:flex;gap:10px;padding:10px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><span style="font-size:16px;">📺</span><div><div style="font-weight:600;font-size:13px;">Watched Algebra video (28 min)</div><div style="font-size:11px;color:var(--ink-30);">May 28 · Video Library</div></div></div>
-      <div style="display:flex;gap:10px;padding:10px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><span style="font-size:16px;">🔥</span><div><div style="font-weight:600;font-size:13px;">8-day study streak achieved</div><div style="font-size:11px;color:var(--ink-30);">May 27 · New personal record</div></div></div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:18px;">📋 Recent Activity</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;gap:10px;padding:11px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);"><span style="font-size:16px;">✅</span><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Completed Physics session</div><div style="font-size:11px;color:var(--ink-40);">Today · 8:45 AM · 15 Qs · 73% accuracy</div></div></div>
+      <div style="display:flex;gap:10px;padding:11px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);"><span style="font-size:16px;">🏆</span><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Reached rank #47 nationally</div><div style="font-size:11px;color:var(--ink-40);">Yesterday · National Leaderboard</div></div></div>
+      <div style="display:flex;gap:10px;padding:11px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);"><span style="font-size:16px;">🎬</span><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Watched Algebra video — 28 min</div><div style="font-size:11px;color:var(--ink-40);">May 28 · Video Library</div></div></div>
+      <div style="display:flex;gap:10px;padding:11px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);"><span style="font-size:16px;">🔥</span><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">8-day study streak achieved</div><div style="font-size:11px;color:var(--ink-40);">May 27 · New personal record</div></div></div>
+      <div style="display:flex;gap:10px;padding:11px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);"><span style="font-size:16px;">📝</span><div><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Completed Mock Exam #2</div><div style="font-size:11px;color:var(--ink-40);">May 25 · Score: 391/600 · +28 improvement</div></div></div>
     </div>
-    <button class="btn btn-ghost btn-sm" style="margin-top:14px;">Download Full Report (PDF)</button>
   </div>
 </div>
-</main></div></div>
+
+</div></div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mm');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
+  </div>
+</div>
 <script src="nav.js"></script>
-</body></html>
+</body>
+</html>
