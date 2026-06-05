@@ -1,50 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finkison — Learning Community</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="shared.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
+
 </head>
 <body>
-<div class="app">
-<nav class="top-nav">
-  <a href="index.html" class="logo"><div class="logo-mark">🦅</div><div class="logo-text"><span class="logo-eth">ፈንክሶን</span><span class="logo-eng">Finkison</span></div></a>
-  <div class="nav-spacer"></div>
-  <div class="plan-badge plan-premium">👑 Premium Active</div>
-  <a href="notifications.html" class="nav-icon-btn"><div class="notif-dot"></div>🔔</a>
-  <a href="account-settings.html" class="btn btn-ghost-white btn-sm">⚙️</a>
-</nav>
-<div class="app-body">
-<nav class="side-nav" id="sidebar"></nav>
-<main class="main">
+<div class="app-shell">
 
-<div class="pg-eyebrow">👥 Premium Feature</div>
-<h2 class="pg-title">Learning Community</h2>
-<p class="pg-sub">Study groups, live sessions, and a national leaderboard. Learn better together.</p>
-<div class="g3">
-  <div class="card" style="border:2px solid var(--azure);cursor:pointer;"><div style="display:flex;justify-content:space-between;margin-bottom:12px;"><div style="font-size:28px;">📐</div><span class="badge badge-azure">12 members</span></div><div style="font-weight:700;font-size:14px;margin-bottom:4px;">Math Masters – AA</div><div style="font-size:12px;color:var(--ink-30);margin-bottom:14px;">Addis Ababa · Grade 12 · Daily</div><button class="btn btn-primary btn-sm btn-block">Join Group</button></div>
-  <div class="card" style="border:2px solid #F59E0B;cursor:pointer;"><div style="display:flex;justify-content:space-between;margin-bottom:12px;"><div style="font-size:28px;">⚡</div><span style="font-size:11px;background:#FEF3E2;color:#92400E;padding:3px 10px;border-radius:999px;font-weight:700;">8 members</span></div><div style="font-weight:700;font-size:14px;margin-bottom:4px;">Physics Force Squad</div><div style="font-size:12px;color:var(--ink-30);margin-bottom:14px;">National · Mixed grades</div><button class="btn btn-primary btn-sm btn-block">Join Group</button></div>
-  <div class="card" style="border:2px solid var(--premium-color);cursor:pointer;"><div style="display:flex;justify-content:space-between;margin-bottom:12px;"><div style="font-size:28px;">🧠</div><span class="badge badge-purple">Your group</span></div><div style="font-weight:700;font-size:14px;margin-bottom:4px;">Grade 12 Champions</div><div style="font-size:12px;color:var(--ink-30);margin-bottom:14px;">Hawassa · Active now</div><button class="btn btn-ghost btn-sm btn-block">Open Group</button></div>
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
+
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div class="flex items-center justify-between flex-wrap gap-2" style="margin-bottom:28px;">
+  <div>
+    <div class="page-eyebrow">👥 Premium Feature</div>
+    <h1 class="page-title">Learning Community</h1>
+    <p class="page-sub">Study groups, peer discussions, live sessions, and national leaderboards.</p>
+  </div>
+  <button class="btn btn-gold btn-sm">+ Create Study Group</button>
 </div>
-<div class="g2 mt-lg">
+
+<div class="g3 fade-up delay-1" style="margin-bottom:24px;">
+  <div class="card card-hover card-glow-azure" style="border-top:2px solid var(--c-azure-hi);">
+    <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><div style="font-size:24px;">📐</div><span class="badge badge-azure">12 members</span></div>
+    <div style="font-weight:700;font-size:15px;color:var(--ink-100);margin-bottom:4px;">Math Masters — Addis</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-bottom:16px;">Grade 12 · Daily sessions · Addis Ababa</div>
+    <div style="display:flex;gap:-6px;margin-bottom:14px;"><div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--c-gold-hi),var(--c-gold));border:2px solid var(--c-night);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--c-night);">A</div><div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--c-teal-hi),var(--c-teal));border:2px solid var(--c-night);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-left:-6px;">S</div><div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--c-azure-hi),var(--c-azure));border:2px solid var(--c-night);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-left:-6px;">D</div><div style="width:26px;height:26px;border-radius:50%;background:var(--ink-20);border:2px solid var(--c-night);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--ink-60);margin-left:-6px;">+9</div></div>
+    <button class="btn btn-azure btn-sm btn-block">Join Group</button>
+  </div>
+  <div class="card card-hover" style="border-top:2px solid var(--c-amber-hi);">
+    <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><div style="font-size:24px;">⚡</div><span class="badge badge-amber">8 members</span></div>
+    <div style="font-weight:700;font-size:15px;color:var(--ink-100);margin-bottom:4px;">Physics Force Squad</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-bottom:16px;">National · Mixed grades · Weekend focus</div>
+    <div style="display:flex;gap:-6px;margin-bottom:14px;"><div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#F59E0B,#B45309);border:2px solid var(--c-night);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;">H</div><div style="width:26px;height:26px;border-radius:50%;background:var(--ink-20);border:2px solid var(--c-night);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--ink-60);margin-left:-6px;">+7</div></div>
+    <button class="btn btn-gold btn-sm btn-block">Join Group</button>
+  </div>
+  <div class="card" style="border-top:2px solid var(--c-gold-hi);background:var(--c-gold-bg);">
+    <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><div style="font-size:24px;">🧠</div><span class="badge badge-gold">Your Group</span></div>
+    <div style="font-weight:700;font-size:15px;color:var(--ink-100);margin-bottom:4px;">Grade 12 Champions</div>
+    <div style="font-size:12px;color:var(--ink-40);margin-bottom:16px;">Hawassa · 6 members · Active now 🟢</div>
+    <div style="display:flex;gap:-6px;margin-bottom:14px;"><div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--c-gold-hi),var(--c-gold));border:2px solid var(--c-night);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--c-night);">K</div><div style="width:26px;height:26px;border-radius:50%;background:var(--ink-20);border:2px solid var(--c-night);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--ink-60);margin-left:-6px;">+5</div></div>
+    <button class="btn btn-ghost btn-sm btn-block">Open Group Chat</button>
+  </div>
+</div>
+
+<div class="g2 fade-up delay-2">
   <div class="card">
-    <div class="card-label">🏆 National Leaderboard — This Week</div>
-    <div style="margin-top:10px;">
-      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);"><div style="font-size:18px;width:28px;text-align:center;">🥇</div><div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold-vivid),var(--teal-vivid));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">A</div><div style="flex:1;"><div style="font-weight:600;font-size:13px;">Abebe T.</div><div style="font-size:11px;color:var(--ink-30);">Addis Ababa</div></div><div style="font-weight:800;font-family:var(--font-mono);color:var(--gold);">542</div></div>
-      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);"><div style="font-size:18px;width:28px;text-align:center;">🥈</div><div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--azure-vivid),var(--azure));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;color:#fff;">S</div><div style="flex:1;"><div style="font-weight:600;font-size:13px;">Sara M.</div><div style="font-size:11px;color:var(--ink-30);">Hawassa</div></div><div style="font-weight:800;font-family:var(--font-mono);">531</div></div>
-      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);"><div style="font-size:18px;width:28px;text-align:center;">🥉</div><div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teal-vivid),var(--teal));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;color:#fff;">D</div><div style="flex:1;"><div style="font-weight:600;font-size:13px;">Dawit K.</div><div style="font-size:11px;color:var(--ink-30);">Bahir Dar</div></div><div style="font-weight:800;font-family:var(--font-mono);">518</div></div>
-      <div style="display:flex;align-items:center;gap:12px;padding:10px 8px;background:var(--gold-pale);border-radius:var(--radius-md);margin-top:8px;"><div style="font-size:14px;width:28px;text-align:center;font-weight:700;color:var(--gold);">47</div><div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#0D2440,var(--ink));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;color:#fff;">K</div><div style="flex:1;"><div style="font-weight:700;font-size:13px;">You (Kebede)</div><div style="font-size:11px;color:var(--ink-30);">Hawassa</div></div><div style="font-weight:800;font-family:var(--font-mono);color:var(--gold);">385</div></div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:18px;">📡 Upcoming Live Sessions</div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="padding:15px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);">
+        <div style="font-weight:700;font-size:13px;color:var(--ink-100);margin-bottom:4px;">Advanced Algebra Masterclass</div>
+        <div style="font-size:12px;color:var(--ink-40);margin-bottom:10px;">Tomorrow · 4:00 PM · Ato Bekele Tadesse</div>
+        <div style="display:flex;gap:8px;align-items:center;"><span class="badge badge-teal">34 enrolled</span><button class="btn btn-gold btn-sm">Register</button></div>
+      </div>
+      <div style="padding:15px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);">
+        <div style="font-weight:700;font-size:13px;color:var(--ink-100);margin-bottom:4px;">Physics Exam Strategy Session</div>
+        <div style="font-size:12px;color:var(--ink-40);margin-bottom:10px;">Sat, Jun 1 · 10:00 AM · Dr. Tigist Wolde</div>
+        <div style="display:flex;gap:8px;align-items:center;"><span class="badge badge-azure">18 enrolled</span><button class="btn btn-azure btn-sm">Register</button></div>
+      </div>
+      <div style="padding:15px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-lg);">
+        <div style="font-weight:700;font-size:13px;color:var(--ink-100);margin-bottom:4px;">Chemistry Q&amp;A — Open Session</div>
+        <div style="font-size:12px;color:var(--ink-40);margin-bottom:10px;">Sun, Jun 2 · 2:00 PM · Prof. Almaz Girma</div>
+        <div style="display:flex;gap:8px;align-items:center;"><span class="badge badge-violet">52 enrolled</span><button class="btn btn-ghost btn-sm">Register</button></div>
+      </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-label">📡 Upcoming Live Sessions</div>
-    <div style="margin-top:10px;display:flex;flex-direction:column;gap:12px;">
-      <div style="padding:14px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Advanced Algebra Masterclass</div><div style="font-size:12px;color:var(--ink-30);margin-bottom:8px;">Tomorrow · 4:00 PM · Ato Bekele</div><div style="display:flex;gap:8px;align-items:center;"><span class="badge badge-teal">34 enrolled</span><button class="btn btn-primary btn-sm">Register</button></div></div>
-      <div style="padding:14px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Physics — Exam Strategy</div><div style="font-size:12px;color:var(--ink-30);margin-bottom:8px;">Sat, Jun 1 · 10:00 AM · Dr. Tigist</div><div style="display:flex;gap:8px;align-items:center;"><span class="badge badge-azure">18 enrolled</span><button class="btn btn-primary btn-sm">Register</button></div></div>
-      <div style="padding:14px;background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Chemistry Q&amp;A Open Session</div><div style="font-size:12px;color:var(--ink-30);margin-bottom:8px;">Sun, Jun 2 · 2:00 PM · Open</div><div style="display:flex;gap:8px;align-items:center;"><span class="badge badge-purple">52 enrolled</span><button class="btn btn-primary btn-sm">Register</button></div></div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:18px;">🏆 National Leaderboard — This Week</div>
+    <div style="display:flex;flex-direction:column;gap:4px;">
+      <div style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:var(--r-md);"><div style="font-size:18px;width:28px;text-align:center;">🥇</div><div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--c-gold-hi),var(--c-gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:var(--c-night);">A</div><div style="flex:1;"><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Abebe T.</div><div style="font-size:11px;color:var(--ink-40);">Addis Ababa</div></div><div style="font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--c-gold-hi);">542</div></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:var(--r-md);"><div style="font-size:18px;width:28px;text-align:center;">🥈</div><div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--c-azure-hi),var(--c-azure));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;">S</div><div style="flex:1;"><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Sara M.</div><div style="font-size:11px;color:var(--ink-40);">Hawassa</div></div><div style="font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink-60);">531</div></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:var(--r-md);"><div style="font-size:18px;width:28px;text-align:center;">🥉</div><div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--c-teal-hi),var(--c-teal));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;">D</div><div style="flex:1;"><div style="font-weight:600;font-size:13px;color:var(--ink-100);">Dawit K.</div><div style="font-size:11px;color:var(--ink-40);">Bahir Dar</div></div><div style="font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink-60);">518</div></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:var(--r-md);background:var(--c-gold-bg);border:1px solid var(--c-gold-rim);margin-top:6px;"><div style="font-size:14px;width:28px;text-align:center;font-weight:700;color:var(--c-gold-hi);">47</div><div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--c-night),var(--c-navy));border:2px solid var(--c-gold-rim);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:var(--c-gold-hi);">K</div><div style="flex:1;"><div style="font-weight:700;font-size:13px;color:var(--c-gold-hi);">You — Kebede A.</div><div style="font-size:11px;color:var(--ink-40);">Hawassa</div></div><div style="font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--c-gold-hi);">423</div></div>
     </div>
+    <a href="leaderboard.html" class="btn btn-ghost btn-sm" style="margin-top:14px;width:100%;">View Full Leaderboard →</a>
   </div>
 </div>
-</main></div></div>
+
+</div></div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mm');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
+  </div>
+</div>
 <script src="nav.js"></script>
-</body></html>
+</body>
+</html>
