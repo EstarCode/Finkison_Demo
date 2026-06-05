@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finkison — Offline & USSD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="nav.css">
+
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- TOP BAR -->
+  <header id="app-topbar" class="app-topbar" role="banner"></header>
+
+  <div class="app-body">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="app-sidebar" class="app-sidebar" role="navigation" aria-label="Main navigation"></nav>
+
+    <!-- OVERLAY (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" role="presentation"></div>
+
+    <!-- PAGE CONTENT -->
+    <main class="main" id="page-main" role="main">
+<!-- TOP BAR (built by nav.js) -->
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+
+
+  <!-- SIDEBAR (built by nav.js) -->
+  
+
+  <!-- MAIN CONTENT -->
+  
+<div class="flex items-center justify-between flex-wrap gap-2" style="margin-bottom:28px;">
+  <div>
+    <div class="page-eyebrow">📶 Accessibility</div>
+    <h1 class="page-title">Offline &amp; USSD Access</h1>
+    <p class="page-sub">Study everywhere — no internet required. Finkison works on any phone, any network, any region.</p>
+  </div>
+  <span class="badge badge-teal" id="sync-status">✓ All content synced</span>
+</div>
+<div class="g2 fade-up delay-1" style="margin-bottom:24px;">
+  <div class="card" style="border-top:2px solid var(--c-teal-hi);">
+    <div style="font-size:36px;margin-bottom:14px;">📱</div>
+    <div style="font-weight:700;font-size:16px;color:var(--ink-100);margin-bottom:8px;">Offline Mode</div>
+    <p style="font-size:13px;color:var(--ink-60);line-height:1.65;margin-bottom:18px;">All your study materials, practice questions, and progress are cached locally. Works perfectly with no internet connection.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-md);"><span style="font-size:13px;color:var(--ink-80);">📐 Mathematics (Gr. 12)</span><span class="badge badge-teal">Synced</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-md);"><span style="font-size:13px;color:var(--ink-80);">⚡ Physics (Gr. 12)</span><span class="badge badge-teal">Synced</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-md);"><span style="font-size:13px;color:var(--ink-80);">🧪 Chemistry (Gr. 12)</span><span class="badge badge-teal">Synced</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:var(--ink-06);border:1px solid var(--s-rim);border-radius:var(--r-md);"><span style="font-size:13px;color:var(--ink-80);">📖 English (Gr. 12)</span><span class="badge badge-teal">Synced</span></div>
+    </div>
+    <button class="btn btn-teal btn-sm btn-block" onclick="this.textContent='✓ Synced just now!'">🔄 Sync Now</button>
+    <div style="font-size:11px;color:var(--ink-40);margin-top:10px;text-align:center;">Last synced: Today at 6:12 AM · 47 MB cached</div>
+  </div>
+  <div class="card" style="border-top:2px solid var(--c-gold-hi);">
+    <div style="font-size:36px;margin-bottom:14px;">📞</div>
+    <div style="font-weight:700;font-size:16px;color:var(--ink-100);margin-bottom:8px;">USSD Dial Access</div>
+    <p style="font-size:13px;color:var(--ink-60);line-height:1.65;margin-bottom:18px;">No smartphone? No data? Dial our USSD code from any basic mobile phone — 2G or feature phone — to access practice questions.</p>
+    <div style="background:var(--c-night);border:1px solid var(--c-gold-rim);border-radius:var(--r-xl);padding:24px;text-align:center;margin-bottom:18px;">
+      <div style="font-family:var(--font-mono);font-size:38px;font-weight:700;color:var(--c-gold-hi);letter-spacing:.08em;">*711#</div>
+      <div style="font-size:12px;color:var(--ink-40);margin-top:8px;">Dial from any Ethiopian mobile network</div>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+        <span class="badge badge-dim">Ethio Telecom</span>
+        <span class="badge badge-dim">Safaricom ET</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--ink-60);">
+      <div style="display:flex;gap:8px;"><span style="color:var(--c-gold-hi);font-weight:700;">1.</span>Dial *711# from any phone</div>
+      <div style="display:flex;gap:8px;"><span style="color:var(--c-gold-hi);font-weight:700;">2.</span>Enter your student PIN (from Settings)</div>
+      <div style="display:flex;gap:8px;"><span style="color:var(--c-gold-hi);font-weight:700;">3.</span>Choose subject and start questions</div>
+      <div style="display:flex;gap:8px;"><span style="color:var(--c-gold-hi);font-weight:700;">4.</span>Answers sync to your account when online</div>
+    </div>
+  </div>
+</div>
+<div class="card fade-up delay-2" style="background:linear-gradient(135deg,rgba(13,179,127,.06),var(--s-card));border-color:var(--c-teal-rim);">
+  <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-teal-hi);margin-bottom:14px;">🌍 Designed for Ethiopia</div>
+  <div class="g3">
+    <div style="text-align:center;padding:16px;"><div style="font-size:28px;margin-bottom:8px;">🏘️</div><div style="font-weight:600;font-size:13px;color:var(--ink-100);margin-bottom:4px;">Rural Access</div><div style="font-size:12px;color:var(--ink-40);">Works in Oromia, Amhara, SNNP and all regions with basic GSM coverage</div></div>
+    <div style="text-align:center;padding:16px;"><div style="font-size:28px;margin-bottom:8px;">💡</div><div style="font-weight:600;font-size:13px;color:var(--ink-100);margin-bottom:4px;">Zero Data Cost</div><div style="font-size:12px;color:var(--ink-40);">USSD sessions cost only standard dial charges — no mobile data needed</div></div>
+    <div style="text-align:center;padding:16px;"><div style="font-size:28px;margin-bottom:8px;">🔋</div><div style="font-weight:600;font-size:13px;color:var(--ink-100);margin-bottom:4px;">Low Power Mode</div><div style="font-size:12px;color:var(--ink-40);">Offline app optimised for low-end Android devices with 512MB RAM</div></div>
+  </div>
+</div>
+
+</div></div>
+
+<script>if(window.innerWidth<=900){const b=document.getElementById('mm');if(b)b.style.display='flex';}</script>
+  
+</div><!-- .app-body -->
+</div><!-- .app -->
+    </main>
+
+  </div>
+</div>
+<script src="nav.js"></script>
+</body>
+</html>
